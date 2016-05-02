@@ -104,11 +104,14 @@ gem 'will_paginate', '3.0.4'
 gem 'active_model_serializers'
 
 # # 发送短信
-gem 'sms_client', git: 'git@gitlab.icar99.com:zc/sms_client.git', tag: 'v0.0.5'
+# gem 'sms_client', git: 'git@gitlab.icar99.com:zc/sms_client.git', tag: 'v0.0.5'
+gem 'sms_client', git: 'git@github.com:anhuiliujun/sms_client.git'
 
-gem 'geo', git: 'git@gitlab.icar99.com:zc/geo.git', tag: 'v0.0.5'
+# gem 'geo', git: 'git@gitlab.icar99.com:zc/geo.git', tag: 'v0.0.5'
+gem 'geo', git: 'git@github.com:anhuiliujun/geo.git'
 
-gem 'naught', git: 'git@gitlab.icar99.com:zc/naught.git', tag: '0.1.2'
+# gem 'naught', git: 'git@gitlab.icar99.com:zc/naught.git', tag: '0.1.2'
+gem 'naught', git: 'git@github.com:anhuiliujun/naught.git'
 
 gem 'settingslogic', '~> 2.0.9'
 

@@ -3,9 +3,10 @@
 # Supports bulk-adding hosts to roles, the primary server in each group
 # is considered to be the first unless any hosts have the primary
 # property set.  Don't declare `role :all`, it's a meta role.
-role :app, %w{staging@115.29.208.119}
-role :web, %w{staging@115.29.208.119}
-role :db, %w{staging@115.29.208.119}
+role :app, %w{www@120.26.201.136}
+role :web, %w{www@120.26.201.136}
+role :db, %w{www@120.26.201.136}
+
 
 set :rvm_type, :system
 set :rvm_ruby_version, '2.2.3'
@@ -14,11 +15,11 @@ set :deploy_to, "/var/www/auth_staging"
 
 set :nginx_sites_enabled_path, "/etc/nginx/sites-enabled"
 set :nginx_sites_available_path, "/etc/nginx/sites-available"
-set :nginx_server_name, "staging.nimda.icar99.com"
+set :nginx_server_name, "yes.test.com"
 set :puma_init_active_record, true
 
 set :rails_env, "staging"
-set :branch, 'staging'
+# set :branch, 'staging'
 
 set :monit_role, :all
 
