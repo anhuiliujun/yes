@@ -1,0 +1,8 @@
+<%= search_form_for @q, url: mis_staffers_path, class: 'navbar-form search' do |f| -%>
+  <div class="input-group input-search">
+    <span class="input-group-btn">
+      <%= f.submit 'searct!', class: 'btn btn_default' %>
+    </span>
+    <%= f.text_field :fullname_cont, :placeholder => '输入用户名字搜索', class: 'form-control' %>
+  </div>
+<% end -%>

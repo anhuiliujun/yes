@@ -1,0 +1,60 @@
+<div class="wrap">
+  <div class="information">
+      <%= f.hidden_field :deleted, value: false %>
+      <%= f.hidden_field :role_id, value: '2' %>
+    <dl>
+      <dd>
+        <%= f.label '账号名称:', class: 'width-75' %>
+        <%= f.text_field :login_name, class: 'width-175', required: "required" %>
+      </dd>
+      <dd>
+        <%= f.label '账号密码:', class: 'width-75' %>
+        <%= f.password_field :password, class: 'width-175', required: "required" %>
+      </dd>
+      <dd>
+        <%= f.label '确认密码:', class: 'width-75' %>
+        <%= f.password_field :password_confirmation, class: 'width-175', required: "required" %>
+      </dd>
+    </dl>
+    <dl>
+      <dd>
+        <%= f.label '负责人:', class: 'width-75' %>
+        <%= f.text_field :family_name, class: 'width-85', placeholder: '姓', required: "required" %>
+        <%= f.text_field :name, class: 'width-85 margin-left-4', placeholder: '名', required: "required" %>
+      </dd>
+      <%= f.fields_for :agent do |ff| %>
+        <%= ff.hidden_field :creator_id, value: current_staffer.id %>
+        <%= ff.hidden_field :quota, value: '0' %>
+        <%= ff.hidden_field :balance, value: '0.0' %>
+      <dd>
+        <%= ff.label '公司名称:', class: 'width-75' %>
+        <%= ff.text_field :company_name, class: 'width-175' %>
+      </dd>
+      <dd>
+        <%= ff.label '地址:', class: 'width-75' %>
+        <%= ff.text_field :company_address, class: 'width-175' %>
+      </dd>
+    </dl>
+    <dl>
+      <dd>
+        <%= ff.label '联系电话:', class: 'width-75' %>
+        <%= ff.text_field :phone_number, class: 'width-175' %>
+      </dd>
+      <dd>
+        <%= ff.label '负责区域:', class: 'width-75' %>
+        <%= ff.text_field :charge_area, class: 'width-175' %>
+      </dd>
+      <dd>
+        <%= ff.label '合作方式:', class: 'width-75' %>
+        <%= ff.text_field :cooperation_way, class: 'width-175' %>
+      </dd>
+    </dl>
+    <dl>
+      <dd>
+        <%= ff.label '备注:', class: 'width-75' %>
+        <%= ff.text_area :remark %>
+      </dd>
+    </dl>
+      <% end %>
+  </div>
+</div>

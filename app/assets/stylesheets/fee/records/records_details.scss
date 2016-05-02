@@ -1,0 +1,60 @@
+
+
+@mixin col-width{
+  &:nth-child(1){ width: 7.60%; }
+  &:nth-child(2){ width: 20.67%; }
+  &:nth-child(3){ width: 10.19%; }
+  &:nth-child(4){ width: 13.37%; }
+  &:nth-child(5){ width: 10.48%; }
+  &:nth-child(6){ width: 12.31%; }
+  &:nth-child(7){ width: 10.38%; }
+  &:nth-child(8){ width: 15.00%; }
+}
+
+
+
+.renewal_records_details{
+
+  div.abstract{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    height:50px;
+    background:#87C7E5;
+    color:#fff;
+    &>div{
+      margin-right:50px;
+      span{margin-right:20px;}
+    }
+  }
+
+  table{
+    width:100%;
+    thead{
+      tr{
+        height: 35px;
+        border:1px solid #D2D2D2;
+        background:#D9EDF7;
+        th{
+          @include col-width;
+          text-align:center;
+          color:#5B7196;
+        }
+      }
+    }
+
+    tbody{
+      tr{
+        height: 35px;
+        border:1px solid #D2D2D2;
+        background:#F5F5F5;
+        td{
+          @include col-width;
+          text-align:center;
+          color:#5B7196;
+        }
+      }
+    }
+
+  }
+}

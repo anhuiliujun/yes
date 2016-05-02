@@ -1,0 +1,43 @@
+
+
+@mixin input_style{
+  width:160px;
+  text-align:center;
+  border-radius: 3px; border: 1px solid #CFCFCF;
+}
+
+
+.store_details{
+
+  .web_info{
+    background:#F5F5F5;
+    border:1px solid #495b79;
+    overflow:auto;
+
+    ul{
+      width:100%;
+      margin:40px 0;
+      display:flex;
+      justify-content:space-around;
+      li{
+        //float:left;
+      //  margin-right:20px;
+        display:flex;
+        align-items:center;
+        &:last-child{ margin:0;}
+        input[type='text'],span.info{
+          @include input_style;
+          height:25px; line-height:25px;
+          background:#fff;
+          overflow:hidden;
+        }
+      }
+    }
+
+    .btn_group{
+      text-align:center;
+      margin:55px 0 25px 0;
+    }
+
+  }
+}

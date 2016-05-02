@@ -1,0 +1,54 @@
+<h1 class="title">
+  <span class="title_left">角色详情页面</span>
+  <span class="title_right">
+    <a style="margin-right: 10px;" href="#<%= Routes.edit_role_path(@role) %>">编辑角色</a>
+    <a href="#<%= Routes.roles_path() %>">返回列表</a>
+  </span>
+</h1>
+
+<table class="grid_form">
+  <tbody>
+    <tr>
+      <td class="field">角色名称</td>
+      <td>
+        <%= @role.get 'name' %>
+      </td>
+    </tr>
+    <tr>
+      <td class="field">代码</td>
+      <td>
+        <%= @role.get 'abbrev' %>
+      </td>
+    </tr>
+    <tr>
+      <td class="field">创建时间</td>
+      <td>
+        <%= @role.get 'created_at' %>
+      </td>
+    </tr>
+    <tr>
+      <td class="field">更新时间</td>
+      <td>
+        <%= @role.get 'updated_at' %>
+      </td>
+    </tr>
+    <tr>
+      <td class="field">位置</td>
+      <td>
+        <%= @role.get 'position' %>
+      </td>
+    </tr>
+    <tr>
+      <td class="field">简介</td>
+      <td>
+        <%= @role.get 'description' %>
+      </td>
+    </tr>
+    <tr>
+      <td class="field">管理员个数</td>
+      <td>
+        <%= @role.get 'staffers_count' %>
+      </td>
+    </tr>
+  </tbody>
+</table>

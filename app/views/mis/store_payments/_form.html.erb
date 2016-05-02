@@ -1,0 +1,33 @@
+<%= form_for @payment, url: url, method: :post do |f| -%>
+  <ul>
+    <%= hidden_field_tag 'store_id', @store.id %>
+    <li>
+      <span>打款日期：</span>
+      <%= f.text_field :paid_at, id: 'datetimepicker', autocomplete: 'off', required: true %>
+    </li>
+    <li>
+      <span>续费金额：</span>
+      <%= f.text_field :amount, autocomplete: 'off', required: true %>
+    </li>
+    <li>
+      <span>付款方：</span>
+      <%= f.text_field :remark, placeholder: @store.name, autocomplete: 'off' %>
+    </li>
+    <li>
+      <span>结算方式：</span>
+      <%= f.select :payment_type_id, options_for_select(StorePayment::PAYMENT_TYPE) %>
+    </li>
+    <li>
+      <span>发票：</span>
+      <%= f.select :invoice_type_id, options_for_select(StorePayment::INVOICE_TYPE) %>
+    </li>
+    <li>
+      <span>收据：</span>
+      <%= f.select :receipt_required, options_for_select(StorePayment::RECEIPT_REQUIRED) %>
+    </li>
+  </ul>
+  <div class="btn_group">
+    <%= f.submit '保存', class: 'btn save_btn' %>
+    <%= link_to '取消', url, class: 'btn cancel_btn' %>
+  </div>
+<% end -%>

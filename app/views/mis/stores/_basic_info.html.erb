@@ -1,0 +1,27 @@
+<div class="wrap">
+  <div class="information">
+    <ul>
+      <li>
+        <span>门店名称：</span>
+        <span class="info"><%=@store.name%></span>
+      </li>
+      <li>
+        <span>负责人：</span>
+        姓：<span class="info width-60 margin-right-22"><%=@store.admin.last_name%></span>
+        名：<span class="info width-80"><%=@store.admin.first_name%></span>
+      </li>
+      <% @categories.each do |category| %>
+        <%= category.render_for_show(self)%>
+      <% end %>
+    </ul>
+  </div>
+  <div class="store_image">
+    <div class="image">
+      <%= image_tag 'uploaded_store_pic.png' %>
+    </div>
+  </div>
+</div>
+
+<div class="btn_group">
+  <%=link_to '编辑', edit_mis_store_chain_path(@store), class: 'edit_btn btn' %>
+</div>

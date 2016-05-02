@@ -1,0 +1,69 @@
+@mixin btn {
+  width: 55px;
+  border-radius: 3px;
+  height: 25px;
+  line-height: 25px;
+  color: #fff;
+}
+
+.new-vehicle-setup{
+  width: 380px;
+  min-height: 180px;
+  background: #fff;
+  border: 1px solid #C8C8C8;
+  text-align: center;
+  padding: 20px 20px;
+  position: absolute;
+  margin-top: 100px;
+  margin-left: 115px;
+
+  ul{
+    li{
+      height: 40px;
+      line-height: 40px;
+
+
+      label{
+        width: 70px;
+        text-align: right;
+        margin-right: 20px;
+      }
+      span{
+        text-align: left;
+        margin-left: 20px;
+      }
+      .save-btn{
+        background: #99CC32;
+        border: 1px solid #8CC619;
+        @include btn;
+      }
+
+      .cancel-btn{
+        background: #FF3333;
+        border: 1px solid #FF4747;
+        @include btn;
+        margin-left: 52px;
+      }
+
+      input[type="text"]{
+        vertical-align: middle;
+        height: 25px;
+        line-height: 25px;
+        &:focus{
+          border: 2px solid #84C2FF;
+        }
+      }
+
+      &.btn-group{
+        margin-top: 20px;
+      }
+
+      &.price{
+        span{
+          margin-left: 0;
+        }
+      }
+
+    }
+  }
+}

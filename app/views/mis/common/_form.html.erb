@@ -1,0 +1,35 @@
+<div class="wrap">
+  <div class="information">
+    <ul>
+      <li>
+        <i class="fa fa-asterisk"></i>
+        <span>门店名称：</span>
+        <%= f.text_field :name , id: 'store_name', required: "required", class: 'input' %>
+        <%= f.hidden_field :creator_id, value: current_staffer.id %>
+        <span class="tips">带*选项为必填选项</span>
+      </li>
+      <li>
+        <%=render 'mis/store_chains/admin_of_info', f: f %>
+      </li>
+      <li>
+        <span><%=f.label '门店状态 :'%></span>
+        <select name="store[available]" style="width:160px;">
+              <option value="true">可用</option>
+              <option value="false">不可用</option>
+        </select>
+      </li>
+       <% @categories.each do |category|%>
+          <%= category.render(self) %>
+       <%end%>
+    </ul>
+  </div>
+  <div class="store_image">
+    <div class="image">
+      <%= image_tag 'newstore.png' %>
+    </div>
+    <a href="javascript:void(0)">双击添加图片</a>
+  </div>
+</div>
+<div class="btn_group">
+  <%=f.submit '保存',class: 'save_btn btn'%>
+</div>

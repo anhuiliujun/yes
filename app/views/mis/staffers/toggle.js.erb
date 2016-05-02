@@ -1,0 +1,8 @@
+$("div#toggle_dialog").hide();
+<% if @staffer.deleted? %>
+  $("tr.current td.status").text("暂停使用");
+  $("tr.current td.toggle a").text("恢复");
+<% else %>
+  $("tr.current td.status").text("正在使用");
+  $("tr.current td.toggle a").text("停用");
+<% end%>

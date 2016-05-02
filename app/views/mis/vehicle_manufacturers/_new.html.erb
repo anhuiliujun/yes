@@ -1,0 +1,19 @@
+<div class="new-vehicle-setup">
+  <%= form_tag(mis_vehicle_manufacturers_path, method: :post, remote: true, id: 'manufacturerForm') do %>
+  <%= hidden_field_tag :brand_id %>
+    <ul>
+      <li>
+        <label for="">品牌</label>
+        <span class="width-200 js-brand"></span>
+      </li>
+      <li>
+        <label for="">制造商</label>
+        <input type="text" name="vehicle_manufacturer[name]" class="width-200" required='true'>
+      </li>
+      <li class="btn-group">
+        <%= submit_tag '保存', class: 'save-btn' %>
+        <input type="button" class="cancel-btn" value="取消">
+      </li>
+    </ul>
+  <% end %>
+</div>

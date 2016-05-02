@@ -1,0 +1,62 @@
+<ul class="nav">
+  <li>
+    <a href="javascript:void(0)" class="active">新建用户</a>
+  </li>
+</ul>
+
+  <div class="content user_info">
+    <div class="wrap">
+      <div class="information">
+        <%= form_for @staffer, url: mis_staffers_path do |f|%>
+          <%= f.hidden_field :deleted, value: false %>
+        <dl>
+					<dd>
+            <%= f.label '账号名称：', class: 'width-75' %>
+            <%= f.text_field :login_name, class: 'width-175', required: "required" %>
+					</dd>
+				</dl>
+				<dl>
+					<dd>
+            <%= f.label '姓：', class: 'width-75' %>
+            <%= f.text_field :family_name , class: 'width-175' %>
+					</dd>
+				</dl>
+        <dl>
+          <dd>
+            <%= f.label '名：', class: 'width-75' %>
+            <%= f.text_field :name , class: 'width-175' %>
+          </dd>
+        </dl>
+				<dl>
+					<dd>
+            <%= f.label '用户角色：', class: 'width-75' %>
+            <select name="staffer[role_id]">
+              <option value="1">请选择</option>
+            </select>
+					</dd>
+				</dl>
+				<dl>
+					<dd>
+            <%=f.label '账户密码：', class: 'width-75' %>
+            <%= f.password_field :password, class: 'width-175'%>
+					</dd>
+				</dl>
+				<dl>
+					<dd>
+            <%= f.label '确认密码：', class:'width-75' %>
+            <%= f.password_field :password_confirmation, class: 'width-175'%>
+					</dd>
+				</dl>
+        <%=notice_tag -%>
+      </div>
+
+    </div>
+		<div class="btn_group">
+      <%= f.submit '保存', class: 'save_btn btn'%>
+		</div>
+    <%end%>
+</div>
+
+<script type="text/javascript">
+  $("#new_staffer").validate();
+</script>

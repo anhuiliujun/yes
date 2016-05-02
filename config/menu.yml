@@ -1,0 +1,19 @@
+# 管理后台菜单配置
+# 新增角色后，在roles下面添加数据库中角色字段abbrev。
+# 只支持两级菜单;二级菜单可用属性： name/href/rel/data-confirm/data-method
+menu: 
+  - name: 系统设置
+    roles:
+      - ruby
+    menus:
+      - name: 管理员
+        href: '/staffers'
+      - name: 权限角色
+        href: '/roles'
+  - name: 门店
+    roles:
+      - ruby
+      - salesman
+    menus:
+      - name: 门店管理
+        href: '/mis/store'

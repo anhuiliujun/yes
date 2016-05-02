@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>后台管理系统</title>
+    <%= stylesheet_link_tag "/stylesheets/bootstrap-3.3.5-dist/css/bootstrap.min.css" %>
+    <%= stylesheet_link_tag "/stylesheets/font-awesome/css/font-awesome.min.css" %>
+    <%= stylesheet_link_tag "/stylesheets/main.css" %>
+    <%= stylesheet_link_tag "/stylesheets/store.css" %>
+    <%= stylesheet_link_tag "/stylesheets/fee.css" %>
+    <%= javascript_include_tag "application" %>
+    <%= include_publisher %>
+    <%= csrf_meta_tags %>
+</head>
+
+<body>
+  <%= render '/shared/header'%>
+  <div class="sidebar">
+    <%= render '/shared/sidebar' %>
+  </div>
+  <%= notice_tag -%>
+  <div class="container">
+    <div class="container-fluid content">
+      <div class="row">
+        <div class="main">
+          <%=render 'common/page_nav'%>
+          <div class="storesbox store_details">
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

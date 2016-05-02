@@ -1,0 +1,27 @@
+<%=render "/common/page_nav"%>
+<%=render '/common/info_category_label'%>
+
+<div class="content basic_info">
+    <%= render 'form' %>
+</div>
+
+<script type="text/javascript">
+$("select.provinces").change(function(){
+  var code = $(this).val();
+  var cityCategory = $("select.cities").data("category");
+  var cities = $("select.cities").data("id");
+  $.get("/mis/store_chains/city_code",{ code: code, category_id: cityCategory }, function(data){
+  })
+});
+
+$("select.cities").change(function(){
+  var code = $(this).val();
+  var provincesCode = $("select.provinces").val();
+  var regionsCategory = $("select.regions").data("category");
+  $.get("/mis/store_chains/regions_code",{ code: code, category_id: regionsCategory, provinces: provincesCode }, function(data){
+
+  })
+})
+
+$("#new_store").validate();
+</script>

@@ -1,0 +1,36 @@
+<%= render 'common/page_nav'%>
+<%=render '/common/info_category_label'%>
+
+<div class="content facility_info">
+    <%=render 'form'%>
+</div>
+<%= render 'new_station_dialog'%>
+
+<script type="text/javascript">
+  $("#add").click(function(){
+    $("div.new_station_wrap").show();
+  })
+
+  $("a#station_cancel").click(function(){
+    $("div.new_station_wrap").hide();
+  })
+
+  $(document).on('click',"a#station_save",function(){
+        var id = $(this).data("id")
+        $("div.new_station_wrap").hide();
+        var name = $("input#station_name").val();
+        var quanlity = $("input#station_quanlity").val();
+        $.post("/mis/ca_stations",{name: name,quanlity: quanlity, store_id: id},function(data){
+
+        })
+  })
+
+  $("i.fa.fa-close.cursor-pointer").click(function(){
+    id = $(this).data("id");
+    store = $(this).data("store");
+    $.post("/mis/ca_stations/"+id+"",{_method: 'delete', store_id: store},function(data){
+
+    })
+  })
+
+</script>

@@ -1,0 +1,35 @@
+.page_turning{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  margin-top:30px;
+  color:#CCCED0;
+
+  .store_nums{
+    margin-right:20px;
+    span{ color:#495B79; padding:0 5px;}
+  }
+
+  .btns{
+    border:1px solid #CCCED0;
+    border-radius:5px;
+    width:203px;
+
+    a{ width: 66px; display: inline-block; text-align:center;}
+
+    input[type="text"]{
+      width:55px;
+      text-align:center;
+      height:40px;
+      background: #495B79;
+      color: #fff;
+      border: none;
+      font-size:18px;
+      &:focus{
+        background:#fff;
+        color:#495B79;
+      }
+    }
+  }
+
+}

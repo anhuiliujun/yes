@@ -1,0 +1,29 @@
+<div class="new-vehicle-setup">
+  <%= form_tag(mis_vehicle_series_index_path, method: :post, remote: true, id: 'seriesForm') do %>
+    <%= hidden_field_tag :manufacturer_id %>
+    <ul>
+      <li>
+        <label for="">品牌</label>
+        <span class="width-200 js-brand"></span>
+      </li>
+      <li>
+        <label for="">制造商</label>
+        <span class="width-200 js-manufacturer"></span>
+      </li>
+      <li>
+        <label for="">车系</label>
+        <input type="text" class="width-200" name="vehicle_series[name]" required='true'>
+      </li>
+      <li class="price">
+        <label for="">指导价</label>
+        <input type="text" class="width-93" name="vehicle_series[min]">
+        <span>~</span>
+        <input type="text" class="width-93" name="vehicle_series[max]">
+      </li>
+      <li class="btn-group">
+        <%= submit_tag '保存', class: 'save-btn' %>
+        <input type="button" class="cancel-btn" value="取消">
+      </li>
+    </ul>
+  <% end %>
+</div>

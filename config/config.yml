@@ -1,0 +1,22 @@
+defaults: &defaults
+  app_name: "Auth"
+  faye: 'http://localhost:3000/faye'
+  action:
+    new: '新建'
+    index: '列表'
+    edit: '编辑'
+    show: '详情'
+  message:
+    new_store: '尊敬的客户，您的门店ERP系统已经开通，登录网址为：md.icar99.cn，帐号密码为您的手机号和尾数6位。百世威盛竭诚为您服务！'
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
+
+staging:
+  <<: *defaults

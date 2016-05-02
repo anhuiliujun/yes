@@ -1,0 +1,27 @@
+<%=render "/common/page_nav"%>
+<%=render '/common/info_category_label'%>
+<div class="content facility_info">
+  <ul>
+    <% @categories.each do |category| %>
+      <%= category.render_for_show(self)%>
+    <% end %>
+    <li class="position-relative">
+      <span>门店工位：</span>
+      <ol>
+        <% @stations.each do |station| %>
+          <li>
+            <span><%=station.name%></span>
+            <span class="num"><%=station.quantity%></span>个
+          </li>
+        <%end%>
+      </ol>
+      <div class="total">
+        <span>总计：</span>
+        <span><%=@stations.length%></span>个
+      </div>
+    </li>
+  </ul>
+  <div class="btn_group">
+        <%=link_to '编辑', edit_mis_store_ficilities_infos_path(@store) , class: 'btn edit_btn' %>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="content store">
+  <div class="staff_wrap">
+    <p class="color-0096D3 staff_title font-bold font-14">
+      <%= @store.name %>
+    </p>
+    <%= render 'list' %>
+  </div>
+
+  <div class="page_turning">
+  	<div class="store_nums">
+  		共<span class="font-20"> <%= @store.store_staffs.count %> </span>人
+  	</div>
+    <%= will_paginate @store_staffers %>
+  </div>
+</div>
+
+<div id="floatWindow" class="areabigbox" style="display: none;">
+  <%= render 'reset_dialog' %>
+</div>

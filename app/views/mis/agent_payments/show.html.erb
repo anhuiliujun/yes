@@ -1,0 +1,30 @@
+<%= render 'nav_title' %>
+
+	<div class="content dealer_record">
+		<div class="record_title"> <%= @staffer.fullname %> -代理商</div>
+		<table cellspadding="0" cellspacing="0" class="agent_consume">
+      <thead>
+			  <tr>
+				  <th>#</th>
+					<th>付款日期</th>
+          <th>付款金额</th>
+          <th>单价</th>
+					<th>名额</th>
+          <th>负责人</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @agent_payments.each_with_index do |payment, i| %>
+				<tr>
+				  <td><%= i+1 %></td>
+					<td> <%= payment.created_at.strftime("%Y/%m/%d") %> </td>
+          <td> <%= payment.amount %> </td>
+          <td> <%= payment.price %> </td>
+					<td> <%= payment.quantity %> </td>
+          <td> <%= payment.staffer.fullname %> </td>
+				</tr>
+       <% end%>
+			</tbody>
+
+		</table>
+	</div>

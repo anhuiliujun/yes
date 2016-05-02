@@ -1,0 +1,119 @@
+
+.btn_default{
+	background:#495b79;
+	color: #fff;
+}
+
+.additional_branches_btn,.new_mainstore_btn{
+	background: #3A87AD;
+	color: #fff;
+	padding: 2px 5px;
+	border-radius: 3px;
+
+}
+
+.query_btn{
+	background: #F4F4F4;
+	color:#000;
+	padding: 2px 15px;
+	border-radius: 5px;
+	border: 2px solid #B3B3B3;
+
+	&:active,&:hover{
+    text-decoration: none;
+	}
+
+}
+
+.previous_btn,.next_btn{
+	padding: 0px 10px;
+}
+
+
+.go_back_btn{
+	padding: 0px 10px;
+	background: #FF6B64;
+	color: #fff;
+}
+
+.save_btn{
+	padding: 3px 15px;
+	background: #ff6c60;
+	border-radius: 6px;
+	color: #fff;
+}
+
+.btn_save{
+	border: none;
+	background:none;
+	color: #5196B9;
+	outline:none;
+}
+
+.cancel_btn{
+	padding: 3px 15px;
+	background: #8175c7;
+	border-radius: 6px;
+	color: #fff;
+}
+
+.edit_btn{
+	padding: 3px 15px;
+	background: #ff6c60;
+	border-radius: 6px;
+	color: #fff;
+}
+
+.btn_edit{
+	border: none;
+	background:none;
+	color: #5196B9;
+	outline:none;
+}
+
+.new_user_btn{
+	padding: 3px 15px;
+	background: #FF6B64;
+	color: #fff;
+	border-radius: 6px;
+
+	&:link,&:active{
+    color: #fff;
+	}
+}
+
+.new_dealer_btn{
+	padding: 3px 15px;
+	background: #7F75C3;
+	color: #fff;
+	border-radius: 6px;
+
+  &:link,&:active{
+    color: #fff;
+	}
+
+}
+
+.certain_btn,.popups_cancel_btn{
+	padding: 3px 15px;
+	background: #5c7399;
+	color: #fff;
+	border-radius: 6px;
+}
+
+.btn{
+	&:link,&:active,&:visited{
+    color: #fff;
+	}
+}
+
+
+.new_btn{
+	margin-left:20px;
+	color: #fff;
+	background: #3A87AD;
+	border: 1px solid #d9d9d9;
+	outline: none;
+	padding: 4px 12px;
+	border-radius: 5px;
+}

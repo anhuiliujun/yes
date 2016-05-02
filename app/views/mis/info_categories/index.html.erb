@@ -1,0 +1,32 @@
+<style type="text/css">
+	td { width:80px;}
+</style>
+<h5><%=link_to 'NewCategory',new_mis_info_category_path%></h5>
+<div>
+	<table>
+		<tr>
+			<td><h1>类型名</h1></td>
+		</tr>
+	<% @info_categories.each do |info_categories| %>
+		<tr>
+			<td><h3><%=info_categories.name%></h3></td>
+			<td><%=link_to 'add subtype',new_subtype_mis_info_category_path(info_categories)%></td>
+			<td><%=link_to 'Destroy',mis_info_category_path(info_categories),method: :delete,data: { confirm: '确定删除该类型吗？' }%></td>
+			<td><%=link_to 'Edit' , edit_mis_info_category_path(info_categories)%></td>
+			<td><%=link_to 'Show',mis_info_category_path(info_categories)%></td>
+		</tr>
+	<% @categories=InfoCategory.where(parent_id: info_categories.id)%>
+	<%@categories.each do |category|%>
+		<tr>
+			<td><h6 style="color:red"><%=category.name%></h6></td>
+			<td></td>
+			<td><%=link_to 'Destroy',mis_info_category_path(category),method: :delete,data: { confirm: '确定删除该类型吗？' }%></td>
+			<td><%=link_to 'Edit' , edit_mis_info_category_path(category)%></td>
+			<td><%=link_to 'Show',mis_info_category_path(category)%></td>
+		</tr>
+	<%end%>
+	<% end %>
+	</table>
+</div>
+
+<%= will_paginate @info_categories %>

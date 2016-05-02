@@ -1,0 +1,141 @@
+.dealer_info{
+	background: #F5F5F5;
+	border: 1px solid #495b79;
+	overflow: auto;
+
+	.wrap {
+		display: flex;
+		align-items: flex-start;
+		padding: 20px 0px;
+		justify-content: center;
+
+		.information{
+			display: inline-block;
+			margin-left: 62px;
+			position: relative;
+
+			dl{
+				text-align: left;
+				margin: 0px;
+				padding: 15px 0px;
+				dd{
+					display: inline-block;
+					margin-right: 65px;
+					position: relative;
+					label{
+						display: inline-block;
+						color: #5F7087;
+						font-size: 14px;
+						height: 27px;
+						line-height: 27px;
+						vertical-align: top;
+					}
+
+					input[type="text"],span,select{
+						border-radius: 3px;
+						border: 1px solid #A9A9A9;
+						height: 27px;
+						line-height: 27px;
+						padding: 0px 5px;
+					}
+
+					select{
+						background: #fff;
+					}
+					span{
+						display: inline-block;
+					}
+
+					i.plus{
+						position: absolute;
+						right: 11px;
+						top: 2px;
+						font-size: 24px;
+						color:#485C77;
+						cursor: pointer;
+					}
+
+
+					textarea{
+						min-height:150px;
+						width: 819px;
+						border-radius: 3px;
+					}
+				}
+			}
+
+			ul{
+				li{
+					display: inline-block;
+					padding: 10px 40px;
+					label{
+						display: inline-block;
+						width: 60px;
+						color: #5F7087;
+
+					}
+
+					span{
+						display: inline-block;
+						border: 1px solid #A7A7A7;
+						border-radius:3px;
+						width: 150px;
+						height: 28px;
+						vertical-align: middle;
+						background: #fff;
+						color: #5F7087;
+						text-align: center;
+						line-height: 28px;
+					}
+				}
+			}
+		}
+
+	}
+
+	.btn_group{
+		padding: 50px 0px;
+		text-align: center;
+	}
+
+	.increase_quota{
+		width: 480px;
+		min-height: 145px;
+		background: #F5F5F5;
+		border: 1px solid #485C77;
+		position:absolute;
+		left: 270px;
+		top: 70px;
+		z-index: 100;
+		padding: 10px 10px;
+
+		.number{
+			padding: 20px 0px;
+			text-align: center;
+			color: #5D6E85;
+
+			label{
+				font-size: 14px;
+
+				margin-right: 10px;
+			}
+
+			input[type="text"]{
+        border: 1px solid #485C77;
+				border-radius: 3px;
+				margin-right: 10px;
+				width:150px;
+			}
+
+		}
+
+		.btn_group{
+			padding: 20px 0px;
+			display: flex;
+			justify-content: space-around;
+		}
+
+
+	}
+
+}

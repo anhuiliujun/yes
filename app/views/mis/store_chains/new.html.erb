@@ -1,0 +1,19 @@
+<%= render 'common/page_nav'%>
+<%=render '/common/category_label_for_new'%>
+ <div class="content basic_info">
+      <%=form_for @store,url: mis_store_chains_path do |f|%>
+          <%=render '/mis/common/form', f: f %>
+      <%end%>
+</div>
+
+<script type="text/javascript">
+    $("select.provinces").change(function(){
+      var code = $(this).val();
+      var cityCategory = $("select.cities").data("category");
+      var cities = $("select.cities").data("id");
+      $.get("/mis/store_chains/city_code",{ code: code, category_id: cityCategory }, function(data){
+      })
+    });
+
+    $("#new_store").validate();
+</script>

@@ -1,0 +1,7 @@
+<% if @brand.errors.blank? %>
+  $("#floatWindow").hide();
+  alert("<%= @brand.name %>品牌创建成功");
+  location.reload();
+<% else %>
+  alert("<%= @brand.errors.full_messages.to_sentence %>");
+<% end %>

@@ -1,0 +1,34 @@
+<%= render 'mis/common/toggle_available' %>
+<div class="store content">
+  <div class="main_store_list">
+    <%= render 'search_by_conditions' %>
+    <div class="operating">
+      <div class="item">
+        <input type="checkbox">
+        <label>全选</label>
+      </div>
+      <div class="item">
+        <%= link_to '新增总店', new_mis_store_chain_path, class: "new_mainstore_btn btn" %>
+      </div>
+    </div>
+    <table class="store_list_table table">
+      <thead>
+        <th></th>
+        <th>#</th>
+        <th>省份</th>
+        <th>门店名称</th>
+        <th>门店状态</th>
+        <th>缴费状态</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </thead>
+      <tbody>
+        <%= render partial: 'store', collection: @stores %>
+      </tbody>
+    </table>
+  </div>
+  <%= render 'mis/common/paginate', items: @stores %>
+</div>

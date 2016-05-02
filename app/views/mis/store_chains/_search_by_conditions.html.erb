@@ -1,0 +1,23 @@
+<div class="query_store">
+  <form class="store_search" id="store_search" action="/mis/store_chains" accept-charset="UTF-8" method="get">
+    <input name="utf8" type="hidden" value="✓">
+    <div class="item">
+      <%= select_tag "q[store_type]", options_for_select(Store::STORE_TYPE, @search[:store_type]), class: "width-115" %>
+    </div>
+
+    <div class="item">
+      <%= select_tag "q[available_eq]", options_for_select(Store::AVAILABLE, @search[:available]), include_blank: '门店状态', class: "width-115" %>
+    </div>
+
+    <div class="item">
+      <%= select_tag "q[store_infos_value_eq]", options_for_select(Geo.provinces("1").map {|x| [x.name, x.code]}, @search[:province]), include_blank: '省份', class: "width-115" %>
+    </div>
+
+    <div class="item">
+      <%= select_tag "q[payment_status_eq]", options_for_select(Store::PAYMENT_STATUS, @search[:payment_status]), include_blank: '缴费状态', class: "width-115" %>
+    </div>
+    <div class="item">
+      <input type="submit" name="commit" value="搜索" class="query_btn">
+    </div>
+  </form>
+</div>

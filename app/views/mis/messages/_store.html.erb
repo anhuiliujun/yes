@@ -1,0 +1,11 @@
+<tr class='owed'>
+  <td><%= store_counter + 1 %></td>
+  <td><%= store.name %></td>
+  <td>普通版</td>
+  <td><%= store.available_name %></td>
+  <td class='<%= "fee" if store.balance_empty? %>' ><%= store.balance %></td>
+  <td>
+    <%= link_to '续费', new_mis_message_path(store_id: store.id) %>
+    <%= link_to '续费记录', mis_message_path(store), class: 'margin-left-20' %>
+  </td>
+</tr>

@@ -1,0 +1,28 @@
+<form class="new_role" id="new_role" action="/roles" accept-charset="UTF-8" method="post">
+    <input name="utf8" type="hidden" value="✓">
+  <table class="grid_form">
+    <tbody>
+      <tr>
+        <td class="field"><b>*</b><label for="role_name">Name</label></td>
+        <td><input size="30" type="text" name="role.name" value="<%= @role.get 'name' %>" id="role_name"></td>
+      </tr>
+      <tr>
+        <td class="field"><b>*</b><label for="role_abbrev">Abbrev</label></td>
+        <td><input size="30" type="text" name="role.abbrev" value="<%= @role.get 'abbrev' %>" id="role_abbrev"></td>
+      </tr>
+      <tr>
+        <td class="field"><b></b><label for="role_position">Position</label></td>
+        <td><input size="30" type="number" name="role.position" value="<%= @role.get 'position' %>" id="role_position"></td>
+      </tr>
+      <tr>
+        <td class="field"><b></b><label for="role_description">Description</label></td>
+        <td><input size="30" type="text" name="role.description" value="<%= @role.get 'description' %>" id="role_description"></td>
+      </tr>
+      <tr>
+        <td class="field"></td>
+        <td><input type="submit" name="commit" value="提交"></td>
+      </tr>
+    </tbody>
+  </table>
+  
+</form>

@@ -1,0 +1,66 @@
+
+@mixin col-width{
+  &:nth-child(1){ width: 5.97%; }
+  &:nth-child(2){ width: 20.09%; }
+  &:nth-child(3){ width: 10.30%; }
+  &:nth-child(4){ width: 11.84%; }
+  &:nth-child(5){ width: 10.39%; }
+  &:nth-child(6){ width: 13.96%; }
+  &:nth-child(7){ width: 27.45%; }
+}
+
+
+
+.renewal_records{
+  table{
+    width:100%;
+    font-size:14px;
+    thead{
+      tr{
+        border:1px solid #D2D2D2;
+        height: 35px;
+        background:#D9EDF7;
+        th{
+          @include col-width;
+          text-align:center;
+          color:#5B7196;
+        }
+      }
+    }
+
+    tbody{
+      tr{
+        height: 35px;
+        border:1px solid #D2D2D2;
+        background:#F5F5F5;
+
+        &.owed{
+          .fee,.balance_time{
+            color:#F60632;
+          }
+        }
+
+        &.warning{
+          .name{
+            position:relative;
+            i{ position:absolute; left:2px; top:10px; display:block; font-size:20px; color:#CC002B;}
+          }
+        }
+
+        td{
+          @include col-width;
+          text-align:center;
+          color:#5B7196;
+
+          &.balance_time{
+            span{width:35px;}
+          }
+
+          i{ display:none; }
+
+          a{ color:#0099CC;}
+        }
+      }
+    }
+  }
+}

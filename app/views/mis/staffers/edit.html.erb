@@ -1,0 +1,53 @@
+<nav class="page_nav">
+  <ul>
+    <li class="font-14">
+      <a href="javascript:void(0)" class="color-93CEE6">设置</a>
+    </li>
+    <li class="font-14">
+      <i class="fa fa-angle-double-right"></i>
+      <a href="/ca/operators/index.html" class="color-93CEE6">用户管理</a>
+    </li>
+    <li class="font-14">
+      <i class="fa fa-angle-double-right"></i>
+      <a href="javascript:void(0)">修改密码</a>
+    </li>
+  </ul>
+</nav>
+
+  <ul class="nav">
+    <li>
+      <a href="javascript:void(0)" class="active">修改密码</a>
+    </li>
+  </ul>
+
+  <div class="content user_info">
+    <div class="wrap">
+      <div class="information">
+      <%= form_for @staffer, url: mis_staffer_path(@staffer) do |f|%>
+        <dl>
+					<dd>
+            <%= f.label '账号：', class: 'width-75' %>
+            <span class="width-175" > <%= @staffer.login_name%> </span>
+            <!-- <%= f.text_field :login_name, class: 'width-175', disabled: true %> -->
+					</dd>
+				</dl>
+				<dl>
+					<dd>
+            <%= f.label '密码：', class: 'width-75'%>
+            <%= f.password_field :password, class: 'width-175' %>
+					</dd>
+				</dl>
+				<dl>
+					<dd>
+            <%= f.label '确认密码：', class: 'width-75' %>
+            <%= f.password_field :password_confirmation, class: 'width-175'  %>
+					</dd>
+				</dl>
+      </div>
+      <%= notice_tag -%>
+    </div>
+		<div class="btn_group">
+      <%= f.submit '保存', class: 'save_btn btn' %>
+		</div>
+    <% end %>
+  </div>

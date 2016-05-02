@@ -1,0 +1,13 @@
+<span class="info margin-right-4 margin-left-4" id="cities_of_span">
+  <select name="store[store_info][<%= category.id %>][value]"  required="required" class="cities" data-id="cities_<%= category.id %>" data-category="<%= category.id %>">
+    <% cities = Geo.city("1","#{@store.store_infos.address(category.id-1)}","#{category.current_info_value_by_store}") %>
+    <% if cities.blank? %>
+      <option>城市</option>
+    <%else%>
+      <option value="<%= cities.code %>" > <%= cities.name %> </option>
+    <%end%>
+    <% Geo.cities("1","#{@store.store_infos.address(category.id-1)}").each do |city| %>
+      <option value="<%= city.code %>"><%= city.name %></option>
+    <% end %>
+  </select>
+</span>

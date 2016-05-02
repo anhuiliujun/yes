@@ -1,0 +1,6 @@
+<td><%= @store.get('name') %></td>
+<td><%= @store.get('admin')['last_name'] + @store.get('admin')['first_name'] %></td>
+<td><%= @store.get('created_at') %></td>
+<td><%= @store.get('my_chain')['stores_count'] %></td>
+<td class="action"><a href="#<%= Routes.edit_mis_store_chain_path(@store) %>">编辑总店</a></td>
+<td class="action"><a href="#<%= Routes.mis_store_chain_stores_path(@store) %>">分店管理</a></td>

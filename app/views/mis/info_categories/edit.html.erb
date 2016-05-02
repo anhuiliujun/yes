@@ -1,0 +1,5 @@
+<h5><%=link_to 'Index',mis_info_categories_path%></h5>
+<%=form_for @info_category, url: mis_info_category_path do |f|%>
+	<p><h3><%=f.label "Name:"%></h3><%=f.text_field :name %></p>
+	<%=f.submit '创建类型'%>
+<% end %>

@@ -1,0 +1,19 @@
+<table class="staff">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>员工名称</th>
+      <th>操作</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @store_staffs.each_with_index do |store_staff, i| %>
+    <tr>
+      <td> <%= i+1 %> </td>
+      <td> <%= store_staff.fullname %> </td>
+      <td><%= link_to '重置密码','javascript:void(0)', class: 'js-rest',
+      data: { id: store_staff.id, name: store_staff.full_name } %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

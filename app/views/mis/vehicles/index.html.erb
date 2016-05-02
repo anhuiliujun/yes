@@ -1,0 +1,61 @@
+<%= render 'operate_vehicle' %>
+<div class="vehicles content">
+  <div class="panel">
+    <span>按品牌<i>拼音</i>首字母查找</span>
+    <div class="filter">
+      <% ('A'..'Z').each do |letter| %>
+        <a href="#<%= letter %>"><%= letter %></a>
+      <% end %>
+      <a href="#">0-9</a>
+      <a href="#">特殊符号</a>
+    </div>
+    <a href="javascript:void(0)" class="new_btn btn js-create-brand">新建品牌</a>
+  </div>
+
+  <div class="brands_container">
+    <% @brands.each do |letter, brands| %>
+      <div class="brands">
+        <h2 id="<%= letter %>"><%= letter %></h2>
+        <table class="brand">
+          <% brands.each do |b| %>
+            <tr>
+              <td>
+                <h3>
+                  <span data-b-id='<%= b.id %>'><%= b.name %></span>
+                  <i class="fa fa-plus-circle plus-circle js-create-manufacturer"></i>
+                </h3>
+                <div class="edit" style="display: none">
+                  <input type="text" data-b-id="<%= b.id %>" class='js-edit-brand'><span class="fa fa-check save js-update-brand"></span>
+                </div>
+              </td>
+              <td>
+                <div class="vehicle-series">
+                  <% b.manufacturers.each do |m| %>
+                    <h4>
+                      <span data-m-id='<%= m.id %>' data-b-name='<%= b.name %>'><%= m.name %></span>
+                      <i class="fa fa-plus-circle plus-circle js-create-series"></i>
+                    </h4>
+                    <div class="edit" style="display: none">
+                      <input type="text" data-m-id="<%= m.id %>" class='js-edit-manufacturer'><span class="fa fa-check save js-update-manufacturer"></span>
+                    </div>
+                    <ul>
+                      <% m.series.each do |s| %>
+                        <li>
+                          <span class="series js-show-models" data-s-id="<%= s.id %>" data-m-name="<%= m.name %>" data-b-name="<%= b.name %>"><%= s.name %></span>
+                          <label class="li-label">指导价:<span class="price"><%= s.suggested_price %></span></label>
+                        </li>
+                      <% end %>
+                    </ul>
+                  <% end %>
+                </div>
+              </td>
+            </tr>
+          <% end %>
+        </table>
+      </div>
+    <% end %>
+  </div>
+
+</div>
+<div id="floatWindow" class="areabigbox">
+</div>

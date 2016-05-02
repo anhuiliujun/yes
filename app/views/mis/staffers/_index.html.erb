@@ -1,0 +1,28 @@
+<div class="store content">
+  <div class="btn_wrap">
+    <%= link_to '新建用户', new_mis_staffer_path, class: 'new_user_btn btn' %>
+    <%= link_to '新建经销商', new_mis_agent_path, class: 'new_dealer_btn btn' %>
+    <div style="float:right;">
+      <%= link_to '所有经销商', mis_agents_path %>
+    </div>
+  <div>
+
+  <div class="main_store_list">
+    <table class="user_list_table table">
+      <thead>
+        <th>#</th>
+        <th>姓名</th>
+        <th>角色</th>
+        <th>账号状态</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </thead>
+      <tbody>
+        <%= render @staffers %>
+      </tbody>
+    </table>
+  </div>
+
+  <%= will_paginate @staffers%>
+</div>

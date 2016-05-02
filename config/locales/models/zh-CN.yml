@@ -1,0 +1,18 @@
+zh-CN:
+  activerecord:
+    models:
+      user: 用户
+    attributes:
+      staffer:
+        email: 邮箱
+        username: 昵称
+        password: 密码
+        password_confirmation: 重复密码
+        current_password: 当前密码
+        remember_me: 下次自动登录
+        gender: 性别
+        login_name: 登录名不能存在空字符！
+      store_payment:
+        amount: 续费金额
+      category:
+        name: 类别

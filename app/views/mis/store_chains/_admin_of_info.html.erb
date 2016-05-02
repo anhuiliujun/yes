@@ -1,0 +1,9 @@
+<%=f.fields_for :admin do |ff|%>
+      <i class="fa fa-asterisk"></i>
+      <span>姓：</span>
+      <%= ff.text_field :last_name, required: "required", class: 'input' %>
+      <%= ff.hidden_field :mis_login_enabled, value: true %>
+      <i class="fa fa-asterisk"></i>
+      <span>名：</span>
+      <%= ff.text_field :first_name, required: "required", class: 'input'%>
+<%end%>

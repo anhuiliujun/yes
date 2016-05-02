@@ -1,0 +1,4 @@
+<li class="address">
+  <span>门店地址：</span>
+  <% province = (Geo.state(1,category.current_info_value_by_store) || NullObject.new).name %>
+  <span class="info"><%= province %></span>

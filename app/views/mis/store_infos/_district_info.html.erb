@@ -1,0 +1,14 @@
+<span class="info margin-right-4 margin-left-4" id="regions_of_span">
+  <select name="store[store_info][<%= category.id %>][value]"  class="regions" data-id="regions_<%= category.id %>" data-category="<%= category.id %>">
+    <% regions = Geo.regions("1","#{@store.store_infos.address(category.id - 2)}","#{@store.store_infos.address(category.id - 1)}").where(code: "#{category.current_info_value_by_store}").first %>
+    <% if regions.blank? %>
+      <option value="">区域</option>
+    <% else %>
+      <option value="<%= regions.code %>"><%= regions.name %></option>
+    <% end %>
+    <% Geo.regions("1", "#{@store.store_infos.address(category.id - 2)}", "#{@store.store_infos.address(category.id - 1)}").each do |regions| %>
+      <option value="<%= regions.code %>"><%= regions.name %></option>
+    <% end %>
+  </select>
+</span>
+</li>

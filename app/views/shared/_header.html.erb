@@ -1,0 +1,21 @@
+<header class="navbar navbar-inverse">
+	<div class="navbar-header">
+		<div class="logo">
+			<span>百世威盛 </span>
+		</div>
+	</div>
+
+	<div class="navbar-right">
+        <% if current_staffer %>
+          <ul class="login_personnel">
+            <li>欢迎您超级管理员:
+							<span>
+								<%= link_to "#{current_staffer.fullname}", edit_mis_staffer_path(current_staffer.id) %>
+							</span>
+						</li>
+						<li> <%= link_to "#{image_tag 'photo.png'}".html_safe, mis_staffer_path(current_staffer.id)  %> </li>
+            <li> <%= link_to "退出登录", destroy_staffer_session_path, method: :delete %></a></li>
+          </ul>
+        <% end -%>
+	</div>
+</header>

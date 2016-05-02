@@ -1,0 +1,18 @@
+<div class="new-vehicle-setup">
+  <%= form_tag(mis_vehicle_brands_path, method: :post, remote: true) do %>
+    <ul>
+      <li>
+        <label for="">品牌</label>
+        <input type="text" name="vehicle_brand[name]" class="width-200" required='true'>
+      </li>
+      <li>
+        <label for="">拼音首字母</label>
+        <input type="text" name="vehicle_brand[letter]" class="width-200" required='true'>
+      </li>
+      <li class="btn-group">
+        <%= submit_tag '保存', class: 'save-btn' %>
+        <input type="button" class="cancel-btn" value="取消">
+      </li>
+    </ul>
+  <% end %>
+</div>

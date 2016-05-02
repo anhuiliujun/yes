@@ -1,0 +1,25 @@
+<%= render '/mis/store_payments/nav' %>
+<div class="content software_index">
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>门店名称</th>
+        <th>使用版本</th>
+        <th>门店状态</th>
+        <th>费用状态</th>
+        <th>到期时间</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render partial: 'store', collection: @stores %>
+    </tbody>
+  </table>
+  <%= render '/mis/common/paginate', items: @stores %>
+</div>
+<script type="text/javascript">
+  $(function(){
+    $('#software-bgcolor').addClass('active');
+  });
+</script>

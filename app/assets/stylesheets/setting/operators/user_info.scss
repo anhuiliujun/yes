@@ -1,0 +1,73 @@
+
+.user_info{
+	background: #F5F5F5;
+	border: 1px solid #495b79;
+	overflow: auto;
+	.wrap {
+    display: flex;
+    align-items: flex-start;
+    padding: 20px 0px;
+		justify-content: center;
+
+		.information{
+			display: inline-block;
+	    margin-left: 62px;
+
+			dl{
+				text-align: center;
+				margin: 0px;
+				padding: 15px 0px;
+				dd{
+					label{
+						display: inline-block;
+						color: #5F7087;
+					}
+
+					select{
+						height:25px;
+						width:132px;
+						border-radius: 3px;
+						background:#fff;
+					}
+
+					input[type="text"]{
+						border-radius: 3px;
+						border: 1px solid #A9A9A9;
+					}
+				}
+			}
+
+			ul{
+				li{
+					display: inline-block;
+					padding: 10px 40px;
+					label{
+						display: inline-block;
+						width: 60px;
+						color: #5F7087;
+
+					}
+
+					span{
+						display: inline-block;
+						border: 1px solid #A7A7A7;
+						border-radius:3px;
+						width: 150px;
+						height: 28px;
+						vertical-align: middle;
+						background: #fff;
+						color: #5F7087;
+						text-align: center;
+						line-height: 28px;
+					}
+				}
+			}
+		}
+
+	}
+
+	.btn_group{
+		padding: 50px 0px;
+		text-align: center;
+	}
+}

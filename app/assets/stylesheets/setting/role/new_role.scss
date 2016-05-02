@@ -1,0 +1,49 @@
+
+.new_role{
+	.role_content{
+		border: 1px solid #485C77;
+		background: #f5f5f5;
+		box-shadow:0px 2px 3px #96A0B2 inset;
+
+		.role{
+			height: 80px;
+			display: flex;
+			justify-content: center;
+		  align-items: center;
+			padding-top: 20px;
+
+
+		}
+
+		.privileges{
+			width: 80%;
+			margin:0 auto;
+			text-align: center;
+			padding-top: 20px;
+			dl{
+				dd{
+					display: inline-block;
+				  width: 19.6%;
+					font-size: 16px;
+					color: #4A5E79;
+					height: 30px;
+					line-height: 30px;
+
+					input[type="checkbox"]{
+	          width: 15px;
+						height: 15px;
+						margin: 0px 5px 0px 0px;
+						vertical-align: middle;
+					}
+				}
+			}
+		}
+	}
+
+	.btn_group{
+		text-align: center;
+		padding: 20px 0px;
+	}
+
+
+}

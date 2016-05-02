@@ -1,0 +1,28 @@
+<ul class="nav">
+  <li>
+    <%= link_to '续费记录', 'javascript:void(0)', class: 'active' %>
+  </li>
+</ul>
+<div class="content renewal_records_details">
+  <div class="abstract">
+    <span class="width-200 text-align-center"><%= @store.name %></span>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>打款日期</th>
+        <th>续费月数</th>
+        <th>续费金额(元)</th>
+        <th>付款方</th>
+        <th>结算方式</th>
+        <th>发票</th>
+        <th>收据</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @store_payments %>
+    </tbody>
+  </table>
+  <%= render 'mis/common/paginate', items: @store_payments %>
+</div>

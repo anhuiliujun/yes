@@ -1,0 +1,128 @@
+
+@mixin input_span_style{
+  width:220px;
+  text-align:center;
+  border-radius: 3px; border: 1px solid #CFCFCF;
+  margin:0;
+}
+
+
+
+.store_details{
+  .basic_info{
+    background:#F5F5F5;
+    border:1px solid #495b79;
+    overflow:auto;
+
+    .wrap{
+      display:flex;
+      align-items:flex-start;
+      padding-top:20px;
+      .information{
+        display:inline-block;
+        width:70%;
+        margin-left:62px;
+
+        ul{
+          li{
+            float:left;
+            margin:0 30px 25px 0;
+            width:325px;
+            display:flex;
+            align-items:center;
+            position:relative;
+
+            &:last-child{
+              width: 100%;
+              align-items:flex-start;
+              span{ height:20px; line-height:20px; }
+            }
+
+            &.address{
+              span.info{
+                width:70px;
+              }
+            }
+
+            span{
+              width:80px;
+              text-align:right;
+              margin-right:8px;
+            }
+
+            span.info{
+              @include input_span_style;
+              vertical-align:middle;
+              height:25px; line-height:25px;
+              background:#fff;
+              overflow:hidden;
+            }
+
+            input[type='text']{
+              @include input_span_style;
+              height:25px;
+            }
+
+            select{
+              @include input_span_style;
+              background:#fff;
+              height:25px;
+              width:70px;
+            }
+
+            div.brief_intro,textarea{
+              display:inline-block;
+              width:576px;
+              height:150px;
+              background:#fff;
+              border: 1px solid #CFCFCF;
+              border-radius:3px;
+            }
+
+            &>a img{
+              position:absolute; right:-5px; top:1px;
+              width:20px;
+            }
+
+            &>label{
+              position:absolute; left:98px; top:2px;
+            }
+
+            i.fa-asterisk{
+              position:absolute; left:-6px; top:5px;
+              color:#F45F5F;
+            }
+
+            span.tips{
+              width:150px;
+              color:#F45F5F;
+              position:absolute; bottom:-20px; left:55px;
+            }
+
+          }
+        }
+      }
+
+      .store_image{
+        width:156px;
+        height:151px;
+        margin:55px 0 0 30px;
+        background:transparent;
+        border:none;
+        .image{
+          overflow:hidden;
+          width:156px;
+          height:111px;
+          border-radius:5px;
+          &>img{ width:156px;}
+        }
+        a{ display:block; width:100%; text-align:center; margin-top:10px;}
+      }
+    }
+
+    .btn_group{
+      text-align:center;
+      margin:40px 0 25px 0;
+    }
+  }
+}

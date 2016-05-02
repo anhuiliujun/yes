@@ -1,0 +1,22 @@
+.edit_role{
+
+	dl{
+    dd{
+			&:nth-child(1){width:20%;label{color: #ff6c60;font-size: 16px;}}
+			&:nth-child(2){width:79%;text-align: right;}
+		}
+	}
+
+	.privileges_list{
+		width: 99.99%;
+		tr{
+			td{
+				width: 20%;
+			}
+		}
+	}
+
+	.btn_group{
+		text-align: center;
+	}
+}

@@ -1,0 +1,15 @@
+<li class="position-relative">
+      <span>门店工位：</span>
+      <ol id="ol">
+      <% @stations.each do |station| %>
+          <li id="<%=station.id%>_li"><input type="text" value="<%=station.name%>" ><input type="text" class="num" value="<%=station.quantity%>">个<i id="station_<%=station.id%>" data-store="<%=@store.id%>" data-id="<%=station.id%>" class="fa fa-close cursor-pointer"></i>
+          </li>
+      <%end%>
+      </ol>
+
+      <div class="total">
+              <span>总计：</span>
+              <span><%=@stations.length%></span>个
+      </div>
+      <i id="add" class="fa fa-plus"></i>
+</li>

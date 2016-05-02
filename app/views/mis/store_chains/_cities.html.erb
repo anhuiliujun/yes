@@ -1,0 +1,6 @@
+<select name="store[store_info][<%= @category %>][value]"  class="cities" data-id="cities_<%= @category %>" data-category="<%= @category %>">
+  <option value="">城市</option>
+  <% Geo.cities("1","#{@code}").each do |city| %>
+    <option value="<%= city.code %>"><%= city.name %></option>
+  <% end %>
+</select>

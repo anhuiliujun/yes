@@ -1,0 +1,91 @@
+.role{
+  .main_role_list{
+		padding-top: 50px;
+
+
+    .setting_role_list,.edit_role{
+      dl{
+        border: 1px solid #A9A9A9;
+        margin: 0px;
+        border-bottom: 0px;
+        padding: 0px 20px;
+        width: 99.99%;
+        background: #EAEFF1;
+        dd{
+          display: inline-block;
+
+          height: 45px;
+          line-height: 45px;
+          color: #5E6E85;
+        }
+      }
+      ul{
+        float: left;
+        width: 12.17%;
+        height: 406px;
+        border: 1px solid #A9A9A9;
+        border-right: none;
+        background: #EAEFF1;
+
+        li{
+          height: 45px;
+          border-bottom: 1px solid #A9A9A9;
+          text-align: center;
+          line-height: 45px;
+          cursor: pointer;
+          background: #F5F5F5;
+          color: #5E6E85;
+          font-size: 16px;
+
+          &.active,&:hover{
+            background: #485C77;
+            color: #fff;
+          }
+
+        }
+
+      }
+
+      .privileges_list{
+
+        tbody{
+          tr{
+            background: #F5F5F5;
+            &:nth-child(odd){background: #EAEFF1;}
+            td{
+              border:1px solid #A9A9A9;
+              height: 45px;
+              color: #5E6E85;
+              text-align: center;
+              font-size: 16px;
+
+            }
+          }
+        }
+
+      }
+    }
+
+    .setting_role_list{
+
+      dl{
+        dd{
+          &:nth-child(1){width:78.04%;}
+          &:nth-child(2){width:20.90%; text-align: right;}
+        }
+      }
+      .privileges_list{
+        width: 87.83%;
+        float:left;
+        tbody{
+          tr{
+            td{
+              width: 25%;
+            }
+          }
+        }
+      }
+
+    }
+	}
+}

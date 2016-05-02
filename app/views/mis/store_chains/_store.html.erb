@@ -1,0 +1,13 @@
+<tr>
+  <td><input type="checkbox"></td>
+  <td><%= store_counter + 1 %></td>
+  <td><%= store.province_value %></td>
+  <td><%= store.name %></td>
+  <td><%= store.available_name %></td>
+  <td><%= store.payment_status_name %></td>
+  <td><%= toggle_available_url(store) %></td>
+  <td><%= link_to '追加分店',new_mis_store_path(store_chain_id: store.store_chain_id) if store.my_chain %></td>
+  <td> <%= link_to '员工列表', mis_store_store_staffs_path(store)  %> </td>
+  <td><%= link_to '详情', mis_store_chain_path(store), class: 'color-0096D3' %></td>
+  <td><%= branch?(store) %></td>
+</tr>

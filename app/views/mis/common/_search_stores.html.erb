@@ -1,0 +1,10 @@
+<%= search_form_for @q, url: @search_url, class: 'search navbar-form' do |f| -%>
+  <%= hidden_field_tag :id, @store.id if @store %>
+  <%= hidden_field_tag :type, @type if @type %>
+  <div class="input-group input-search">
+  <span class="input-group-btn">
+    <%= f.submit 'Search!', class: 'btn btn_default' %>
+  </span>
+  <%= f.text_field :name_cont, :placeholder => "输入名称搜索", class: 'form-control', autocomplete: 'off' %>
+  </div>
+<% end -%>

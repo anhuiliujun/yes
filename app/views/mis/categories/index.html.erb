@@ -1,0 +1,90 @@
+<div class="categories content">
+  <ul class="nav">
+    <li>
+      <%= link_to '服务类别', mis_categories_path(type: 'service'), class: ('active' if @type == 'service') %>
+    </li>
+    <li>
+      <%= link_to '销售类别', mis_categories_path(type: 'sale'), class: ('active' if @type == 'sale') %>
+    </li>
+  </ul>
+  <div class="info_head">
+    <span>#</span>
+    <span>名称</span>
+    <span>创建时间</span>
+  </div>
+  <table class="info_content">
+    <tbody>
+      <%= render partial: 'category', collection: @categories %>
+    </tbody>
+  </table>
+  <div class="new">
+    <%= form_for Category.new, url: mis_categories_path do |f| %>
+      <%= hidden_field_tag 'type', @type %>
+      <%= f.text_field :name, class: 'name_new', placeholder: '请输入名称', autocomplete: 'off', required: 'required' %>
+      <i title="保存" class="fa fa-check"></i>
+      <i title="取消" class="fa fa-close"></i>
+    <% end %>
+  </div>
+  <%= render 'mis/common/paginate', items: @categories %>
+</div>
+<script type="text/javascript">
+  function new_category(){
+    var name = $('.name_new').val().trim();
+    if(name != '' && name != null){
+      $('.new_category').submit();
+    }
+    else{
+      alert('请输入名称!');
+    }
+  }
+
+  function empty_input(){
+    $(this).prev().prev().val('');
+  }
+
+  function edit_name(){
+    $(this).parent().parent().siblings().find('td:eq(1)').removeClass('editing');
+    $(this).parent().addClass('editing');
+    $(this).next().val($(this).html());
+    var input = $(this);
+    $(document).click(function(e){
+      if(!$(e.target).is('.name_edit, .fa-close')){
+        input.parent().removeClass('editing');
+        input.prev().html(input.val());
+      }
+    });
+  }
+
+  function change_name(){
+    var category_span = $(this).prev().prev();
+    var category_name = category_span.html();
+    var new_name = category_span.next().val().trim();
+    if(new_name != '' && new_name != null){
+      category_span.html(new_name);
+      $.ajax({
+        url: '/mis/categories/'+ $(this).attr('data-id'),
+        type: 'put',
+        data: {name: new_name},
+        success: function(data){
+          alert(data.notice);
+          if(data.notice == '修改成功!'){
+            location.reload();
+          }
+          else{
+            category_span.html(category_name);
+          }
+        }
+      });
+    }
+    else{
+      alert('请输入名称!');
+    }
+  }
+
+  $(function(){
+    $(document).on('click', '.new .fa-check', new_category);
+    $(document).on('click', '.fa-close', empty_input);
+    $(document).on('dblclick', '.name_show', edit_name);
+    $(document).on('click', '.editing .fa-check', change_name);
+  });
+</script>

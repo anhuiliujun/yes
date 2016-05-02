@@ -1,0 +1,30 @@
+<nav class="page_nav">
+  <ul>
+    <li class="font-14">
+      <a href="javascript:void(0)" class="color-93CEE6">设置</a>
+    </li>
+    <li class="font-14">
+      <i class="fa fa-angle-double-right"></i>
+      <a href="/ca/operators/index.html" class="color-93CEE6">用户管理</a>
+    </li>
+    <li class="font-14">
+      <i class="fa fa-angle-double-right"></i>
+      <a href="javascript:void(0)">编辑经销商</a>
+    </li>
+  </ul>
+</nav>
+
+<%= render '/mis/agent_payments/nav_title' %>
+
+<div class="content dealer_info">
+  <%= form_for @staffer, url: mis_agent_path do |f| %>
+    <%= render 'edit', f: f %>
+  	<div class="btn_group">
+      <%= f.submit '保存', class: 'save_btn btn' %>
+  	</div>
+  <% end %>
+</div>
+
+<script type="text/javascript">
+
+</script>

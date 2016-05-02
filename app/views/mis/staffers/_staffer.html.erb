@@ -1,0 +1,9 @@
+<%= content_tag "tr", data: staffer.slice(:id, :fullname) do %>
+  <td><%= staffer_counter + 1 %></td>
+  <td><%= staffer.fullname %></td>
+  <td><%= staffer.role%></td>
+  <td class="status"><%= staffer.deleted? ? '暂停使用' : '正在使用' %></td>
+  <td><%= link_to '详情', staffer.role == "经销商" ? mis_agent_path(staffer) : mis_staffer_path(staffer), class: 'color-0096D3' %></td>
+  <td class="toggle"><%= link_to staffer.deleted? ? '恢复' : '停用','javascript:void(0)' , class: 'color-0096D3' %></td>
+  <td><%= link_to '修改密码', edit_mis_staffer_path(staffer), class: 'color-0096D3'  %></td>
+<% end %>

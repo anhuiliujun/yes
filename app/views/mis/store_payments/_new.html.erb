@@ -1,0 +1,12 @@
+<ul class="nav">
+  <li>
+    <%= link_to target_name, 'javascript:void(0)', class: 'active' %>
+  </li>
+</ul>
+<div class="content software_renewal">
+  <div class="abstract">
+    <span class="name"><%= @store.name %></span>
+    <span>使用版本：普通版</span>
+  </div>
+  <%= render 'mis/store_payments/form' %>
+</div>

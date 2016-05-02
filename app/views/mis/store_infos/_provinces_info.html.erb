@@ -1,0 +1,18 @@
+<li class="address">
+  <span>门店地址：</span>
+  <span class="info">
+
+  <select name="store[store_info][<%= category.id %>][value]" required="required"  class="provinces" data-id="provinces_<%= category.id %>" data-category="<%= category.id %>">
+    <% provinces = Geo.state(1, category.current_info_value_by_store)  %>
+    <% if provinces.blank? %>
+      <option>省份</option>
+    <%else%>
+      <option value="<%= provinces.code %>" > <%= provinces.name %> </option>
+    <%end%>
+    <% Geo.provinces("1").each do |city| %>
+      <option value="<%= city.code %>"><%= city.name %></option>
+    <% end %>
+  </select>
+
+
+  </span>

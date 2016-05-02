@@ -1,0 +1,12 @@
+<tr class='owed'>
+  <td><%= store_counter + 1 %></td>
+  <td><%= store.name %></td>
+  <td>普通版</td>
+  <td><%= store.available_name %></td>
+  <td class='<%= "fee" if store.owing? %>' ><%= store.payment_status_name %></td>
+  <td class='<%= "fee" if store.expire_notice_required? %>' ><%= store.expired_at.strftime("%Y年%m月%d日 %H:%M:%S") if store.expired_at.present? %></td>
+  <td>
+    <%= link_to '续费', new_mis_software_path(store_id: store.id) %>
+    <%= link_to '续费记录', mis_software_path(store), class: 'margin-left-20' %>
+  </td>
+</tr>

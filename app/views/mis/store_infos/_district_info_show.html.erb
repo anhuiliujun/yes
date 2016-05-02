@@ -1,0 +1,4 @@
+<span class="info">
+  <%= (Geo.regions("1","#{@store.store_infos.address(category.id-2)}","#{@store.store_infos.address(category.id-1)}").where(code: "#{category.current_info_value_by_store}").first || NullObject.new ).name %>
+</span>
+</li>

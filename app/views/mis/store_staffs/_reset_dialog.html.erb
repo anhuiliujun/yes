@@ -1,0 +1,26 @@
+<div class="areabox prompt">
+  <div class="areabar">
+    <div class="areatitle">重置密码</div>
+    <div class="areaclose">x</div>
+  </div>
+  <div class="grounds">
+    <div class="staff_name">
+      <label for="">员工姓名：</label> <span id="js-full_name"></span>
+    </div>
+
+    <div class="password">
+      <label for="">重置密码：</label>
+      <input type="password" class="password" id="password">
+    </div>
+
+    <div class="password">
+      <label for="">确认密码：</label>
+      <input type="password" class="password" id="confirmation" >
+    </div>
+
+    <div class="btn_group">
+      <%= link_to '确定', 'javascript:void(0)', class: 'certain_btn btn', data: {store: @store.id } %>
+      <%= link_to '取消', 'javascript:void(0)', class: 'popups_cancel_btn btn' %>
+    </div>
+  </div>
+</div>

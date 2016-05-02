@@ -1,0 +1,12 @@
+<%=form_for @store_info,url: mis_store_ficilities_infos_path, method: 'post' do |f|%>
+  <input type="hidden" name="id" value="<%=@store.id%>" >
+  <ul>
+    <% @categories.each do |category| %>
+      <%=category.render(self) %>
+    <% end %>
+    <%= render 'form_station'%>
+  </ul>
+  <div class="btn_group">
+    <%=f.submit '保存', class: 'btn edit_btn' %>
+  </div>
+<%end%>

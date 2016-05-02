@@ -1,0 +1,33 @@
+<h1 class="title">
+  <span class="title_left">连锁店列表页</span>
+  <span class="title_right">
+    <a href="#<%= Routes.new_mis_store_chain_path() %>">新建总店</a>
+  </span>   
+</h1>
+
+<div class="box">
+  <form class="form-inline" id="store_chain_search" action="/mis/store_chains" accept-charset="UTF-8" method="get">
+    <input name="utf8" type="hidden" value="✓">    
+    <input placeholder="总店名称" class="form-control" type="text" name="q.name_cont" id="q_name_cont">
+    <input type="submit" name="commit" value="搜索" class="btn btn-primary" style="width:5%;">
+  </form>
+</div>
+
+<div class="page_info">
+  总数： <b><%= @stores.size() %></b>
+</div>
+
+<table class="grid">
+  <thead>
+    <tr>
+      <th>名称</th>
+      <th>管理员</th>
+      <th>创建时间</th>
+      <th>分店个数</th>
+      <th colspan="2">操作</th>
+    </tr>
+  </thead>
+  <tbody id="stores">
+
+  </tbody>
+</table>

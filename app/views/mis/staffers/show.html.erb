@@ -1,0 +1,52 @@
+<nav class="page_nav">
+  <ul>
+    <li class="font-14">
+      <a href="javascript:void(0)" class="color-93CEE6">设置</a>
+    </li>
+    <li class="font-14">
+      <i class="fa fa-angle-double-right"></i>
+      <a href="/mis/staffers" class="color-93CEE6">用户管理</a>
+    </li>
+    <li class="font-14">
+      <i class="fa fa-angle-double-right"></i>
+      <a href="javascript:void(0)">新建用户</a>
+    </li>
+  </ul>
+</nav>
+
+  <ul class="nav">
+    <li>
+      <%= link_to '人员详情', nil, class: 'active'%>
+    </li>
+  </ul>
+
+  <div class="content user_info">
+    <div class="wrap">
+      <div class="information">
+        <ul>
+					<li>
+            <label>用户姓名</label>
+						<span><%= @staffer.fullname%></span>
+          </li>
+					<li>
+            <label>用户角色</label>
+						<span>超级管理员</span>
+          </li>
+					<li>
+            <label>创建时间</label>
+						<span><%= @staffer.created_at.strftime("%Y年%m月%d日")%></span>
+          </li>
+					<li>
+            <label>用户账号</label>
+						<span><%= @staffer.login_name%></span>
+          </li>
+					<li>
+            <label>账号状态</label>
+						<span><%= @staffer.deleted? ? '正在使用': '恢复使用' %></span>
+          </li>
+				</ul>
+
+      </div>
+
+    </div>
+  </div>

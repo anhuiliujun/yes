@@ -1,0 +1,7 @@
+<% if @series.errors.blank? %>
+  $("#floatWindow").hide();
+  alert("<%= @series.name %>车系创建成功");
+  location.reload();
+<% else %>
+  alert("<%= @series.errors.full_messages.to_sentence %>");
+<% end %>

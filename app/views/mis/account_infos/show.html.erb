@@ -1,0 +1,16 @@
+<%=render "/common/page_nav"%>
+<%=render '/common/info_category_label'%>
+
+<div class="content account_info">
+  <ul>
+    <% @categories.each do |category| %>
+      <li>
+        <span class="info width-60"><%=category.name%></span>:
+        <span class="info"><%=category.current_info_value_by_store%></span>
+      </li>
+    <%end%>
+  </ul>
+  <div class="btn_group">
+    <%=link_to '编辑', edit_mis_store_account_infos_path(@store) , class: 'edit_btn btn'  %>
+  </div>
+</div>

@@ -1,0 +1,73 @@
+
+##修改时请注意，切不可在中间插入式的修改！！！
+
+categories:
+  -
+    name: 基本信息
+    sub_categories:
+      -
+        code: mobile
+        name: 联系电话
+      -
+        code: provinces
+        name: 省份
+      -
+        code: city
+        name: 城市
+      -
+        code: district
+        name: 区域
+      -
+        code: detail
+        name: 详细地址
+      -
+        code: position
+        name: 经纬度
+      -
+        code: brief
+        name: 门店简介
+  -
+    name: 网络信息
+    sub_categories:
+      -
+        name: 运营商名
+      -
+        name: 门店IP
+  -
+    name: 设施信息
+    sub_categories:
+      -
+        code: area
+        name: 门店面积
+      -
+        code: work
+        name: 上班时间
+      -
+        code: chapman
+        name: 下班时间
+      -
+        code: staff
+        name: 员工数
+      -
+        code: scope
+        name: 经营范围
+  -
+    name: 财务信息
+    sub_categories:
+      -
+        name: 开户银行
+      -
+        name: 对公账号
+      -
+        name: 企业税号
+      -
+        name: 发票抬头
+  -
+    name: 营销账号
+    sub_categories:
+      -
+        name: 微信号
+      -
+        name: 传真号
+      -
+        name: Email号

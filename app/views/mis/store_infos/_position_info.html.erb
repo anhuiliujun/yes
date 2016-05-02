@@ -1,0 +1,6 @@
+<li class="position-relative">
+  <span>经纬度：</span>
+  <input type="text" class="info" name="store[store_info][<%= category.id %>][value]" value="<%= category.current_info_value_by_store%>">
+  <label class="coordinate">(X,Y)</label>
+  <a href="http://api.map.baidu.com/lbsapi/getpoint/index.html" target="_blank"> <%= image_tag 'map.png' %> </a>
+</li>

@@ -1,0 +1,10 @@
+<tr>
+  <td><%= store_payment_counter + 1 %></td>
+  <td><%= store_payment.paid_at.strftime("%Y年%m月%d日 %H:%M:%S") %></td>
+  <td><%= store_payment.paid_months %></td>
+  <td><%= store_payment.amount %></td>
+  <td><%= store_payment.payer %></td>
+  <td><%= store_payment.payment_type_name %></td>
+  <td><%= store_payment.invoice_type_name %></td>
+  <td><%= store_payment.receipt_required_name %></td>
+</tr>

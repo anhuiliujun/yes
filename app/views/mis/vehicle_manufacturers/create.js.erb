@@ -1,0 +1,7 @@
+<% if @manufacturer.errors.blank? %>
+  $("#floatWindow").hide();
+  alert("<%= @manufacturer.name %>制造商创建成功");
+  location.reload();
+<% else %>
+  alert("<%= @manufacturer.errors.full_messages.to_sentence %>");
+<% end %>

@@ -1,0 +1,206 @@
+<%= content_for :javascripts do %>
+  <script type="text/javascript">
+    $(function(){
+      $(document).on('click', '.js-create-model', create_model);
+      $(document).on('click', '.cancel-btn', hide_floatWindow);
+      $(document).on('click', '.js-series', edit_series);
+      $('.js-create-brand').on('click', create_brand);
+      $('.js-create-manufacturer').on('click', create_manufacturer);
+      $('.js-create-series').on('click', create_series);
+      $('.js-show-models').on('click', show_models);
+      $('.brand h3 span').on('dblclick', edit_brand);
+      $('.js-update-brand').on('click', update_brand);
+      $('.brand h4 span').on('dblclick', edit_manufacturer);
+      $('.js-update-manufacturer').on('click', update_manufacturer);
+    });
+
+    function create_brand() {
+      $("#floatWindow").html("<%= j render '/mis/vehicle_brands/new' %>");
+      $("#floatWindow").show();
+    }
+
+    function create_manufacturer() {
+      var brand = $(this).prev();
+      $("#floatWindow").html("<%= j render '/mis/vehicle_manufacturers/new' %>");
+      $('.js-brand').html(brand.html());
+      $("#floatWindow").show();
+      $('#manufacturerForm').submit(function() {
+        $('#brand_id').val(brand.attr('data-b-id'));
+      });
+    }
+
+    function create_series() {
+      var manufacturer = $(this).prev();
+      $("#floatWindow").html("<%= j render '/mis/vehicle_series/new' %>");
+      $('.js-manufacturer').html(manufacturer.html());
+      $('.js-brand').html(manufacturer.attr('data-b-name'));
+      $("#floatWindow").show();
+      $('#seriesForm').submit(function() {
+        $('#manufacturer_id').val(manufacturer.attr('data-m-id'));
+      });
+    }
+
+    function create_model() {
+      var brand_name = $(this).prevAll('.js-brand').html();
+      var manufacturer_name = $(this).prevAll('.js-manufacturer').html();
+      var series_name = $(this).prev().html();
+      var series_id = $(this).prev().attr('data-s-id');
+      $("#floatWindow").html("<%= j render '/mis/vehicle_models/new' %>");
+      $('.js-brand').html(brand_name);
+      $('.js-manufacturer').html(manufacturer_name);
+      $('.js-series').html(series_name);
+      $("#floatWindow").show();
+      $('#modelForm').submit(function() {
+        $('#series_id').val(series_id);
+      });
+    }
+
+    function show_models() {
+      $("#floatWindow").html("<%= j render '/mis/vehicle_models/index' %>");
+      $('.js-brand').html($(this).attr('data-b-name'));
+      $('.js-manufacturer').html($(this).attr('data-m-name'));
+      $('.js-series').html($(this).html());
+      $('.js-series').attr('data-s-id', $(this).attr('data-s-id'));
+      $.get('/mis/vehicle_series?id=' + $(this).attr('data-s-id'), function(models) {
+        $.each(models, function(idx, model) {
+          $('.models').append('<li class="cursor-pointer" data-m-id="'+ model.id +'">'+ model.name +'</li>');
+        });
+      });
+      $("#floatWindow").show();
+      update_model();
+    }
+
+    function update_model() {
+      $(document).on('click', '.models li', function() {
+        var brand = $('.js-brand').html();
+        var manufacturer = $('.js-manufacturer').html();
+        var series = $('.js-series').html();
+        var model = $(this).html();
+        var model_id = $(this).attr('data-m-id')
+        $("#floatWindow").html("<%= j render '/mis/vehicle_models/edit' %>");
+        $('.js-brand').html(brand);
+        $('.js-manufacturer').html(manufacturer);
+        $('.js-series').html(series);
+        $('.js-model').val(model);
+        $('.js-model').attr('data-m-id', model_id);
+      });
+      $(document).on('click', '.js-update-model', function() {
+        $.ajax({
+          type: 'put',
+          url: '/mis/vehicle_models/'+ $('.js-model').attr('data-m-id'),
+          data: { vehicle_model: { name: $('.js-model').val() } },
+          dataType: 'json',
+          success: function(data) {
+            if(data.status){
+              alert('修改成功');
+              location.reload();
+            }
+            else{
+              alert(data.notice);
+            }
+          }
+        });
+      });
+    }
+
+    function edit_brand() {
+      var brand = $(this).parent();
+      var edit = $(this).parent().next();
+      $(document).click(function(e){
+        if(!$(e.target).is('.js-edit-brand')){
+          edit.hide();
+          brand.show();
+        }
+      });
+      brand.hide();
+      edit.children('input').val(brand.find('span').html());
+      edit.show();
+    }
+
+    function update_brand() {
+      $.ajax({
+        type: 'put',
+        url: '/mis/vehicle_brands/'+ $(this).prev().attr('data-b-id'),
+        data: { name: $(this).prev().val() },
+        dataType: 'json',
+        success: function(data) {
+          if(data.status){
+            alert('修改成功');
+            location.reload();
+          }
+          else{
+            alert(data.notice);
+          }
+        }
+      });
+    }
+
+    function edit_manufacturer() {
+      var manufacturer = $(this).parent();
+      var edit = $(this).parent().next();
+      $(document).click(function(e){
+        if(!$(e.target).is('.js-edit-manufacturer')){
+          edit.hide();
+          manufacturer.show();
+        }
+      });
+      manufacturer.hide();
+      edit.children('input').val(manufacturer.find('span').html());
+      edit.show();
+    }
+
+    function update_manufacturer() {
+      $.ajax({
+        type: 'put',
+        url: '/mis/vehicle_manufacturers/'+ $(this).prev().attr('data-m-id'),
+        data: { name: $(this).prev().val() },
+        dataType: 'json',
+        success: function(data) {
+          if(data.status){
+            alert('修改成功');
+            location.reload();
+          }
+          else{
+            alert(data.notice);
+          }
+        }
+      });
+    }
+
+    function edit_series() {
+      $("#floatWindow").html('<%= j render "/mis/vehicle_series/edit" %>');
+      $('.js-brand').html($(this).prevAll('.js-brand').html());
+      $('.js-manufacturer').html($(this).prevAll('.js-manufacturer').html());
+      $.get('/mis/vehicle_series/'+ $(this).attr('data-s-id'), function(s) {
+        $('.js-series-name').val(s.name);
+        $('.js-series-min').val(s.min);
+        $('.js-series-max').val(s.max);
+      });
+      update_series($(this).attr('data-s-id'));
+    }
+
+    function update_series(s_id) {
+      $(document).on('click', '.js-update-series', function() {
+        $.ajax({
+          type: 'put',
+          url: '/mis/vehicle_series/'+ s_id,
+          data: { vehicle_series: { name: $('.js-series-name').val(), min: $('.js-series-min').val(), max: $('.js-series-max').val() } },
+          dataType: 'json',
+          success: function(data) {
+            if(data.status){
+              alert('修改成功');
+              location.reload();
+            }
+            else{
+              alert(data.notice);
+            }
+          }
+        });
+      });
+    }
+
+    function hide_floatWindow() {
+      $("#floatWindow").hide();
+    }
+  </script>
+<% end %>

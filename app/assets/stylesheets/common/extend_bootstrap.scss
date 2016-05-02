@@ -1,0 +1,47 @@
+
+.breadcrumb{
+	margin-bottom: 0px;
+
+	>li+li:before{
+		content: '';
+	}
+}
+
+.navbar-form{
+	padding: 0px;
+}
+
+.navbar-inverse{
+	background: #495B79;
+	padding:12px 25px;
+}
+
+
+.page-header {
+  background: #F5F5F5;
+  height: 40px;
+  padding: 0;
+  z-index: 10;
+  left:150px;
+  margin: 0;
+  position: fixed;
+  right: 0;
+  top: 66px;
+  backface-visibility: hidden;
+	border-bottom: 1px solid #AAAAAA;
+  transform-style: preserve-3d;
+}
+
+fieldset {
+  border-top: 1px solid #495b79;
+  height: 20px;
+
+  legend {
+    color:#495b79;
+    margin-left:100px;
+    padding: 0 10px;
+    width: 100px;
+    border:none;
+    margin-bottom:0;
+  }
+}

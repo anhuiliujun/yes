@@ -1,0 +1,52 @@
+<form class="edit_store" id="edit_store_chain" action="" accept-charset="UTF-8" method="post">
+  <input name="utf8" type="hidden" value="&#x2713;" />
+  <table class="grid_form">
+    <tbody>
+      <tr>
+        <td class="field"><b></b><label for="store_name">店名</label></td>
+        <td><input size="30" type="text" value="<%= @store.get('name') %>" name="store.name" id="store_name" /></td>
+      </tr>
+
+      
+    </tbody>
+  </table>
+
+  <table class="grid_form">
+    <tbody>
+      <% if @store.isNew() : %>
+        <tr>
+          <td class="field"><b></b><label for="store_admin_attributes_last_name">姓</label></td>
+          <td><input size="20" type="text" value="" name="store.admin_attributes.last_name" id="store_admin_attributes_last_name" /></td>
+        </tr>
+        <tr>
+          <td class="field"><b></b><label for="store_admin_attributes_first_name">名</label></td>
+          <td><input size="20" type="text" value="" name="store.admin_attributes.first_name" id="store_admin_attributes_first_name" /></td>
+        </tr>
+        <tr>
+          <td class="field"><b></b><label for="store_admin_attributes_login_name">手机</label></td>
+          <td><input size="20" type="text" value="" name="store.admin_attributes.login_name" id="store_admin_attributes_login_name" /></td>
+        </tr>
+        <tr>
+          <td class="field"><b></b><label for="store_admin_attributes_gender">性别</label></td>
+          <td>
+            <input type="radio" value="male" <%= 'checked'  %> name="store.admin_attributes.gender" id="store_admin_attributes_gender_male" />男
+            <input type="radio" value="female" name="store.admin_attributes.gender" id="store_admin_attributes_gender_female" />女
+          </td>
+        </tr>
+        <tr>
+          <td class="field"><b></b><label for="store_admin_attributes_password">密码</label></td>
+          <td><input size="20" type="password" name="store.admin_attributes.password" id="store_admin_attributes_password" /></td>
+        </tr>
+        <tr>
+          <td class="field"><b></b><label for="store_admin_attributes_password_confirmation">确认密码</label></td>
+          <td><input size="20" type="password" name="store.admin_attributes.password_confirmation" id="store_admin_attributes_password_confirmation" /></td>
+        </tr>
+      <% end %>
+      <tr>
+        <td class="field"></td>
+        <td><input type="submit" name="commit" value="提交" /></td>
+      </tr>
+    </tbody>
+  </table>
+ 
+</form>

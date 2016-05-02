@@ -1,0 +1,16 @@
+<td><%= @role.get 'name' %></td>
+<td><%= @role.get 'abbrev' %></td>
+<td><%= @role.get 'created_at' %></td>
+<td><%= @role.get 'updated_at' %></td>
+<td><%= @role.get 'position' %></td>
+<td><%= @role.get 'description' %></td>
+<td><%= @role.get 'staffers_count' %></td>
+<td class="action">
+  <a href="#<%= Routes.role_path(@role)%>">详情</a>
+</td>
+<td class="action">
+  <a href="#<%= Routes.edit_role_path(@role) %>">编辑</a>
+</td>
+<td class="action">
+  <a href="javascript:void(0);" class="del">删除</a>
+</td>

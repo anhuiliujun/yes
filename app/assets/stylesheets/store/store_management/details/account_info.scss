@@ -1,0 +1,57 @@
+
+
+
+@mixin span_input_style{
+  width:150px;
+  text-align:center;
+  border: none;
+}
+
+
+.store_details{
+
+  .account_info{
+    background:#F5F5F5;
+    border:1px solid #495b79;
+    overflow:auto;
+    position:relative;
+
+    i.fa-plus{
+      position:absolute;
+      font-size:30px;
+      right:15px; top:37px;
+      cursor:pointer;
+    }
+
+    ul{
+      width:93%;
+      overflow:auto;
+      margin:40px 0 40px 20px;
+      li{
+        float:left;
+        width:215px;
+        border:1px solid #495b79;
+        border-radius: 3px;
+        background:#fff;
+        margin:0 18px 25px 0;
+        display:flex;
+        align-items:center;
+        &:last-child{ margin:0;}
+        span.info{
+          @include span_input_style;
+          height:25px; line-height:25px;
+          overflow:hidden;
+        }
+        input[type='text']{
+          @include span_input_style;
+          height:25px; line-height:25px;
+        }
+      }
+    }
+
+    .btn_group{
+      text-align:center;
+      margin:60px 0 25px 0;
+    }
+  }
+}

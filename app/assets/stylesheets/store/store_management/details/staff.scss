@@ -1,0 +1,69 @@
+@mixin table-col-width {
+  &:nth-child(1){width: 8%; text-align: center;}
+  &:nth-child(2){width: 72%;}
+  &:nth-child(3){width: 20%; text-align: center;}
+}
+
+.staff_wrap{
+  margin-top: 15px;
+
+  .staff_title{
+    border: 1px solid #ddd;
+    padding: 10px 0 10px 35px;
+    margin: 0;
+  }
+  .staff{
+    width: 100%;
+    font-size: 14px;
+    thead{
+      tr{
+        color: #3B5998;
+        height: 34px;
+        background: #d9edf7;
+        border: 1px solid #ddd;
+        th{
+          @include table-col-width;
+        }
+      }
+    }
+    tbody{
+      tr{
+        border: 1px solid #ddd;
+        height: 39px;
+
+        &:nth-child(odd){
+          background: #F5F5F5;
+        }
+
+        &:nth-child(even){
+          background: #EAEFF1;
+        }
+
+        td{
+          @include table-col-width;
+
+          &:last-child{
+            color: #3B5998;
+          }
+        }
+      }
+    }
+  }
+}
+
+.grounds{
+  font-size: 14px;
+  color: #3B5998;
+  .staff_name{
+    margin-top: 10px;
+    padding: 10px 0;
+  }
+  .password{
+    padding: 10px 0;
+    .password{
+      height: 40px;
+      width: 400px;
+      border: 1px solid #0096D3;
+    }
+  }
+}

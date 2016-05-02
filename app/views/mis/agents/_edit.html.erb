@@ -1,0 +1,70 @@
+<div class="wrap">
+  <div class="information">
+    <dl>
+      <dd>
+        <label class="width-75">账号名称:</label>
+        <span class="width-175"> <%= @staffer.login_name %> </span>
+      </dd>
+      <dd>
+        <label class="width-75">账号角色:</label>
+        <span class="width-175"> <%= @staffer.role %> </span>
+      </dd>
+      <dd>
+        <label class="width-75">创建时间:</label>
+        <span class="width-175"> <%= @staffer.created_at.strftime("%Y-%m-%d") %> </span>
+      </dd>
+    </dl>
+    <dl>
+        <dd>
+          <%= f.label '负责人:', class: 'width-75' %>
+          <%= f.text_field :family_name, class: 'width-85', placeholder: '姓', value: @staffer.family_name %>
+          <%= f.text_field :name, class: 'width-85 margin-left-4', placeholder: '名', value: @staffer.name %>
+        </dd>
+      <%= f.fields_for :agent do |ff| %>
+        <%= ff.hidden_field :id, value: @staffer.agent.id %>
+        <dd>
+          <%= ff.label '公司名称:', class: 'width-75' %>
+          <%= ff.text_field :company_name, class: 'width-175', value: @staffer.agent.company_name %>
+        </dd>
+        <dd>
+          <%= ff.label '地址:', class: 'width-75' %>
+          <%= ff.text_field :company_address, class: 'width-175', value: @staffer.agent.company_address %>
+        </dd>
+    </dl>
+    <dl>
+      <dd>
+        <%= ff.label '联系电话:', class: 'width-75' %>
+        <%= ff.text_field :phone_number, class: 'width-175', value: @staffer.agent.phone_number %>
+      </dd>
+      <dd>
+        <%= ff.label '负责区域:', class: 'width-75' %>
+        <%= ff.text_field :charge_area, class: 'width-175', value: @staffer.agent.charge_area %>
+      </dd>
+      <dd>
+        <%= ff.label '合作方式:', class: 'width-75' %>
+        <%= ff.text_field :cooperation_way, class: 'width-175', value: @staffer.agent.cooperation_way %>
+      </dd>
+    </dl>
+
+    <dl>
+      <dd>
+        <%= ff.label '分配名额:', class: 'width-75' %>
+        <%= ff.text_field :quota, class: 'width-175', value: @staffer.agent.quota, readonly: true %>
+        <i class="fa fa-plus plus"></i>
+      </dd>
+      <dd>
+        <%= ff.label '金额:', class: 'width-75' %>
+        <%= ff.text_field :balance, class: 'width-175', value: @staffer.agent.balance, readonly: true %>
+      </dd>
+    </dl>
+    <dl>
+      <dd>
+        <%= ff.label '备注:', class: 'width-75' %>
+        <%= ff.text_area :remark, :value => @staffer.agent.remark %>
+      </dd>
+    </dl>
+    <% end %>
+    <%= render 'dialog_to_payment' %>
+
+  </div>
+</div>

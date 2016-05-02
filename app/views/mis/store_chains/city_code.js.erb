@@ -1,0 +1,10 @@
+$("span#cities_of_span").html(" ");
+$("span#cities_of_span").html("<%= j (render 'cities')%>")
+$("select.cities").change(function(){
+  var code = $(this).val();
+  var provincesCode = $("select.provinces").val();
+  var regionsCategory = $("select.regions").data("category");
+  $.get("/mis/store_chains/regions_code",{ code: code, category_id: regionsCategory, provinces: provincesCode }, function(data){
+
+  })
+})

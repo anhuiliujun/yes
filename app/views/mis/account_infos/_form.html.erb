@@ -1,0 +1,18 @@
+<div class="content account_info">
+  <%=form_for @store_info, url: mis_store_account_infos_path, method: 'post' do |f|%>
+  <input name="id" type="hidden" value="<%=@store.id%>">
+    <ul>
+      <% @categories.each do |category| %>
+        <li>
+            <span class="info width-60"><%=category.name%></span>:
+            <input class="info" name="store_info[<%=category.id%>][value]" value="<%=category.current_info_value_by_store%>">
+        </li>
+      <%end%>
+    </ul>
+    <i class="fa fa-plus"></i>
+
+    <div class="btn_group">
+      <%=f.submit '保存', class: 'save_btn btn' %>
+    </div>
+  <%end%>
+</div>

@@ -1,0 +1,10 @@
+<tr>
+  <td><%= category_counter + 1 %></td>
+  <td>
+    <span class="name_show"><%= category.name %></span>
+    <input type="text" class="name_edit">
+    <i title="保存" class="fa fa-check" data-id='<%= category.id %>'></i>
+    <i title="取消" class="fa fa-close"></i>
+  </td>
+  <td><%= category.created_at.strftime("%Y年%m月%d日 %H:%M:%S") %></td>
+</tr>

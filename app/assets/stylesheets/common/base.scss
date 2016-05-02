@@ -1,0 +1,36 @@
+
+ol,ul{
+	margin:0px;
+	padding: 0px;
+	list-style: none;
+}
+
+a,a:hover,a:link,a:active{
+	text-decoration: none;
+	outline: none;
+	color: #fff;
+}
+
+
+select{
+	background: transparent;
+}
+
+.input_box{
+	height:25px; line-height:25px;
+}
+
+select{
+	height:27px; line-height:27px;
+}
+
+span{
+	display:inline-block;
+}
+
+
+label{ font-weight:100;}
+
+body{
+	background-color: #fff;
+}

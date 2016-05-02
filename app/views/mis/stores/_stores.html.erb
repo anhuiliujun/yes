@@ -1,0 +1,35 @@
+<div class="store content">
+  <div class="main_store_list">
+    <div class="operating">
+      <div class="item">
+        <input type="checkbox">
+        <label>全选</label>
+      </div>
+      <div class="item">
+        <%= link_to '追加分店',new_mis_store_path(store_chain_id: @store.store_chain_id), class: 'new_mainstore_btn btn margin-right-20' %>
+        <%= link_to '返回', mis_store_chains_path, class: 'go_back_btn btn' %>
+      </div>
+      <div class="item float-right  margin-right-20">
+        <label>总店:</label>
+        <span><%= @store.name %></span>
+      </div>
+    </div>
+    <table class="store_list_table table">
+      <thead>
+        <th></th>
+        <th>#</th>
+        <th>省份</th>
+        <th>分店名称</th>
+        <th>门店状态</th>
+        <th>缴费状态</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </thead>
+      <tbody>
+        <%= render partial: 'store', collection: @stores %>
+      </tbody>
+    </table>
+  </div>
+  <%= render 'mis/common/paginate', items: @stores %>
+</div>

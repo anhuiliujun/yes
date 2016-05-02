@@ -1,0 +1,21 @@
+<div class="increase_quota" id="add" style="display:none">
+  <div class="number"><label>添加金额:</label><input id='money' type="text">元</div>
+  <div class="number"><label>添加单价:</label><input id='price' value="1" type="text" style="width:140px">个/元</div>
+  <div class="number"><label>添加名额:</label><input id='quantity' type="text" readonly='true'>个</div>
+  <div class="btn_group">
+    <%= link_to '保存', 'javascript:void(0)', class: 'save_btn btn'  %>
+    <%= link_to '取消', 'javascript:void(0)', class: 'cancel_btn btn' %>
+  </div>
+</div>
+
+<div id="confirm_dialog" class="disable_store_wrap  stop_branch_grounds" style="display:none;margin-left: -320px;">
+  <div class="confirm">
+    <div class="title"></div>
+    <div class="confirm_content">
+      <div class="btn_group">
+        <%= link_to '确定', 'javascript:void(0)', class: 'certain_btn btn', id: 'congirm_to_payment', data: { id: @staffer.id, creator: current_staffer.id } %>
+        <%= link_to '取消', 'javascript:void(0)', class: 'popups_cancel_btn btn' %>
+      </div>
+    </div>
+  </div>
+</div>

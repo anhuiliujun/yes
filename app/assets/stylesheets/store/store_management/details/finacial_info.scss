@@ -1,0 +1,46 @@
+
+@mixin span_input_style{
+  width:160px;
+  text-align:center;
+  border-radius: 3px; border: 1px solid #CFCFCF;
+}
+
+
+.store_details{
+
+  .finacial_info{
+    background:#F5F5F5;
+    border:1px solid #495b79;
+    overflow:auto;
+
+    ul{
+      width:70%;
+      padding-top:25px;
+      margin:0 auto;
+      overflow:auto;
+      li{
+        float:left;
+        width:280px;
+        margin-bottom:25px;
+        display:flex;
+        align-items:center;
+        &:nth-child(odd){ margin-right:160px;}
+        span.info{
+          @include span_input_style;
+          height:25px; line-height:25px;
+          background:#fff;
+          overflow:hidden;
+        }
+        input[type='text']{
+          @include span_input_style;
+          height:25px;
+        }
+      }
+    }
+
+    .btn_group{
+      text-align:center;
+      margin:30px 0 25px 0;
+    }
+  }
+}

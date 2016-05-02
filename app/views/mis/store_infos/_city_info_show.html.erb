@@ -1,0 +1,4 @@
+<span class="info margin-right-4 margin-left-4">
+  <% city = (Geo.city("1","#{@store.store_infos.address(category.id-1)}","#{category.current_info_value_by_store}") || NullObject.new).name %>
+  <%= city %>
+</span>

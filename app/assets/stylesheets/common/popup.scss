@@ -1,0 +1,148 @@
+.overlay{
+	background: #000;
+	filter: alpha(opacify=50);
+	display: block;
+	opacity: 0.5;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1000;
+}
+
+.popup{
+	position: fixed;
+  margin-left: -236px;
+  margin-top: -150px;
+  left: 50%;
+  top: 50%;
+  display: none;
+  z-index: 7;
+  border: 1px solid #e6e6e6;
+}
+
+.areabigbox{
+	position: fixed;
+	margin-left:-236px;
+	margin-top: -150px;
+	left:50%;
+	top:50%;
+
+	display: none;
+	z-index: 8;
+	border: 1px solid #e6e6e6;
+
+  .areabox{
+		border: 1px solid #a0b3d6;
+		background: white;
+
+		.areabar{
+			background: #5c7399;
+			border-bottom: 1px solid #a0b3d6;
+			overflow: hidden;
+
+			.areatitle{
+				padding:5px;
+				width: 100%;
+				float: left;
+				cursor: move;
+				height: 100px;
+				background: #5c7399;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				color: #fff;
+				font-size: 18px;
+				span{
+					color:#fff;
+					font-size: 22px;
+				}
+			}
+		}
+
+		.areaclose{
+			width: 33px;
+			height: 33px;
+			text-align: center;
+			line-height: 35px;
+			font-size: 20px;
+			cursor: pointer;
+			color: #fff;
+			position: absolute;
+			right: 10px;
+
+			&:hover{
+				color: #e52b1d;
+			}
+		}
+
+		.confirm_content{
+			height: 142px;
+			background:#fff;
+
+			.btn_group{
+				padding-top: 80px;
+				display: flex;
+				justify-content: space-around;
+			}
+		}
+
+
+		.grounds{
+			width: 550px;
+			margin: 0 auto;
+
+			p{
+				height: 50px;
+				line-height: 50px;
+			}
+
+			.write_grounds{
+				position: relative;
+				top: 25px;
+				padding: 0px 10px;
+			}
+
+			textarea{
+				width: 100%;
+				border: 1px solid #B7B7B7;
+				height: 230px;
+				border-radius: 3px;
+				text-indent: 85px;
+			}
+
+			.btn_group{
+				display: flex;
+				justify-content: space-around;
+				padding: 50px 0px;
+			}
+		}
+	}
+
+	.prompt{
+		width: 693px;
+
+	}
+
+	.confirm{
+		width: 470px;
+		height:246px;
+	  margin: 0 auto;
+	  background: #fff;
+
+
+		.confirm_content{
+			height: 142px;
+			background:#fff;
+
+			.btn_group{
+				padding-top: 80px;
+				display: flex;
+				justify-content: space-around;
+			}
+		}
+	}
+
+
+}

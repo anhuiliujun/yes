@@ -1,0 +1,7 @@
+<% if @model.errors.blank? %>
+  $("#floatWindow").hide();
+  alert("<%= @model.name %>车型创建成功");
+  location.reload();
+<% else %>
+  alert("<%= @model.errors.full_messages.to_sentence %>");
+<% end %>

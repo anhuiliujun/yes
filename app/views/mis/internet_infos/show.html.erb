@@ -1,0 +1,15 @@
+<%=render "/common/page_nav"%>
+<%=render '/common/info_category_label'%>
+<div class="content web_info">
+  <ul>
+    <% @categories.each do |category| %>
+      <li class="company_name">
+          <span><%=category.name%>：</span>
+          <span class="info"><%=category.current_info_value_by_store %></span>
+      </li>
+    <%end%>
+  </ul>
+  <div class="btn_group">
+        <%=link_to '编辑' , edit_mis_store_internet_infos_path(@store), class: 'btn edit_btn'  %>
+  </div>
+</div>

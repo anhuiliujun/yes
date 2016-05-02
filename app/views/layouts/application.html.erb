@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>后台管理系统</title>
+    <%= javascript_include_tag "application" %>
+    <%= stylesheet_link_tag "application" %>
+    <%= csrf_meta_tags %>
+    <%= yield :javascripts %>
+</head>
+
+<body>
+  <%= render '/shared/header'%>
+  <%= render '/shared/sidebar' %>
+  <div class="container">
+    <div class="container-fluid content">
+      <div class="row">
+        <div class="main">
+          <%= render 'common/page_nav' %>
+          <div class="storesbox store_details">
+            <div class="page-head title">
+              <div class="img">
+                <%= image_tag 'second_menu.png' %>
+                <span class="font-16"><%= @page_head %></span>
+              </div>
+              <%= render 'mis/common/flash' %>
+              <div>
+                <%= render 'mis/common/search_stores' if @search_url %>
+                <%= render '/mis/staffers/search_staffer' if params[:controller].include?("staffers") && params[:action] == "index" ||
+                 params[:controller].include?("agents") && params[:action] == "index" %>
+              </div>
+            </div>
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

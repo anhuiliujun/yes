@@ -1,0 +1,61 @@
+<div class="sidebar">
+	<div class="slidebar_collapse">
+		<div class="sidebar_header drop-shadow">
+			<i class="fa glyphicon glyphicon-th"></i>
+			<span>功能管理</span>
+		</div>
+		<div class="sidebar_menu">
+			<nav id="menu" class="nav_main  openned">
+				<ul class="nav nav_sidebar" id="menuList">
+					<li class="nav-parent">
+						<a href="javascript:void(0)"><span><i class="fa fa-play"></i>门店信息</span></a>
+						<ul class="nav nav-children">
+							<li>
+								<a href="/mis/store_chains" class= '<%= "active" if params[:controller].split("/").last == "store_chains" || params[:controller].split("/").last == "stores" %>'>
+                <%= image_tag 'second_menu.png' %>门店管理</a>
+							</li>
+						</ul>
+					</li>
+					<% if can? :read, :all %>
+					<li class="nav-parent">
+						<a href="javascript:void(0);"><span><i class="fa fa-play"></i>费用管理</span></a>
+						<ul class="nav nav-children">
+              <li>
+                <a href="/mis/softwares" class= '<%= "active" if params[:controller].split("/").last == "softwares" || params[:controller].split("/").last == "messages"  %>'>
+                <%= image_tag 'second_menu.png' %>续费管理
+								</a>
+              </li>
+            </ul>
+					</li>
+					<li class="nav-parent">
+						<a href="javascript:void(0)"><span><i class="fa fa-play"></i>设置</span></a>
+            <ul class="nav nav-children">
+              <li>
+              <a href="/mis/staffers" class= '<%= "active" if params[:controller].split("/").last == "staffers" || params[:controller].split("/").last == "agents" %>' >
+                <%= image_tag 'second_menu.png' %>运营人员</a>
+              </li>
+              <li>
+              <a href="javascript:void(0)"><%= image_tag 'second_menu.png' %>新建角色</a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> <%= image_tag 'second_menu.png' %>角色设置</a>
+              </li>
+							<li>
+								<a href="/mis/vehicles"> <%= image_tag 'second_menu.png' %>车型相关设置</a>
+              </li>
+            </ul>
+					</li>
+					<li class="nav-parent">
+						<a href="javascript:void(0)"><span><i class="fa fa-play"></i>类别</span></a>
+            <ul class="nav nav-children">
+              <li>
+                <a href="/mis/categories?type=service" class='<%= "active" if params[:controller].split("/").last == "categories" %>' > <%= image_tag 'second_menu.png' %>类别设置</a>
+              </li>
+            </ul>
+					</li>
+					<% end %>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>

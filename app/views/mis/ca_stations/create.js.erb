@@ -1,0 +1,9 @@
+$("ol#ol").append("<%= j(render 'station')  %>");
+$("div.total span:last").html("<%=@stations.length%>");
+  $("i.fa.fa-close.cursor-pointer").click(function(){
+    id = $(this).data("id");
+    store = $(this).data("store");
+    $.post("/mis/ca_stations/"+id+"",{_method: 'delete', store_id: store},function(data){
+      
+    })
+  })

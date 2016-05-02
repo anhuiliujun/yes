@@ -1,0 +1,6 @@
+<h1 class="title">
+  <span class="title_left">新建角色</span>
+  <span class="title_right">
+    <a href="#<%= Routes.roles_path() %>">返回列表</a>
+  </span>
+</h1>

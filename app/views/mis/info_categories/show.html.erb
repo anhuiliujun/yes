@@ -1,0 +1,20 @@
+<div>
+	<table>
+		<tr>
+			<h2>总类型: <%=@info_category.name%></h2>
+		</tr>
+	</table>
+	<table>
+		<tr>
+			<td><h4>子类型</h4></td>
+		</tr>
+		<tr>
+			<p><h4 style="color:red">parent_id: <%=@info_category.id%></h4></p>
+		</tr>
+		<%@info_categories.each do |category|%>
+		<tr>
+			<td><h4><%=category.name%></h4></td>
+		</tr>
+		<% end %>
+	</table>
+</div>
